@@ -13,6 +13,8 @@ alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 xhost +local:root > /dev/null 2>&1
 
+set -o vi
+PS1=" ┌錄 \[\e[32m\]\u\[\e[m\]\[\e[32m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\] \w \\$ \n "
 complete -cf sudo
 shopt -s checkwinsize
 
@@ -27,4 +29,6 @@ shopt -s histappend
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
 
-export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\[$(tput setaf 2)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 2)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 2)\]]\[$(tput setaf 5)\]\\$ \[$(tput sgr0)\]\e]12;magenta\a\[\e[m\]"
+
+export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\[$(tput setaf 2)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 2)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 2)\]]\[$(tput setaf 5)\]\\$ \[$(tput sgr0)\]"
+
