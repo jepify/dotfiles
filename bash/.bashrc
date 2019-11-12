@@ -13,7 +13,8 @@ alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 xhost +local:root > /dev/null 2>&1
 
-set -o vi
+#set -o vi
+
 PS1=" ┌錄 \[\e[32m\]\u\[\e[m\]\[\e[32m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\] \w \\$ \n "
 complete -cf sudo
 shopt -s checkwinsize
