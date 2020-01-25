@@ -1,16 +1,16 @@
 "## General
 set number  " Show line numbers
-set linebreak   " Break lines at word (requires Wrap lines)
+set wrap linebreak nolist  " Break lines at word (requires Wrap lines)
 set showbreak=+++   " Wrap-broken line prefix
-set textwidth=100   " Line wrap (number of cols)
+set textwidth=0   " Line wrap (number of cols)
 set showmatch   " Highlight matching brace
 set spell   " Enable spell-checking
- 
+
 set hlsearch    " Highlight all search results
 set smartcase   " Enable smart-case search
 set ignorecase  " Always case-insensitive
 set incsearch   " Searches for strings incrementally
- 
+
 set autoindent  " Auto-indent new lines
 set shiftwidth=4    " Number of auto-indent spaces
 set smartindent " Enable smart-indent
@@ -25,7 +25,10 @@ set backspace=indent,eol,start  " Backspace behaviour
 set number
 set laststatus=2
 set nocompatible
-
+if !has('gui_running')
+    set t_Co=256
+    set guifont=Fira\ Code\ Regular
+endif
 
 call plug#begin('~/.vim/plugged')
 
@@ -60,30 +63,27 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Unmanaged plugin (manually installed and updated)
 Plug '~/my-prototype-plugin'
 
-Plug 'doums/darcula'
-Plug 'flrnprz/candid.vim'
-Plug 'flrnprz/plastic.vim'
+
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
-
+Plug 'itchyny/landscape.vim'
 " Initialize plugin system
 call plug#end()
 
 set background=dark
 syntax on
-"colorscheme darcula
-"colorscheme candid
-colorscheme plastic
+colorscheme landscape
 " Lightline
- let g:lightline = { 
-    \ 'active': {
-    \	'left': [['mode', 'paste'],
-    \	    ['gitbranch', 'readonly', 'filename', 'modified']]
-    \ },
-    \ 'component_function': {
-    \   'gitbranch': 'gitbranch#name'
-    \ }
-    \ }
+let g:lightline = { 
+	    \ 'colorscheme': 'landscape',
+	    \ 'active': {
+	    \	'left': [['mode', 'paste'],
+	    \	    ['gitbranch', 'readonly', 'filename', 'modified']]
+	    \ },
+	    \ 'component_function': {
+	    \   'gitbranch': 'gitbranch#name'
+	    \ }
+	    \ }
 
 
 "R markdown
@@ -91,3 +91,23 @@ autocmd Filetype,BufWritePost rmd map <F5> :!echo<space>"require(rmarkdown);<spa
 
 
 
+" Remove newbie crutches in Insert Mode
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+inoremap <Up> <Nop>
+
+" " Remove newbie crutches in Normal Mode
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+nnoremap <Up> <Nop>
+
+" " Remove newbie crutches in Visual Mode
+vnoremap <Down> <Nop>
+vnoremap <Left> <Nop>
+vnoremap <Right> <Nop>
+vnoremap <Up> <Nop>
+
+nnoremap j gj
+nnoremap k gk
