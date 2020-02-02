@@ -7,7 +7,7 @@ alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 alias ls="ls -hN --color=auto --group-directories-first"
-alias la="ls -a -hN --color=auto --group-directories-first"
+alias la="ls -A -hN --color=auto --group-directories-first"
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
@@ -27,7 +27,6 @@ shopt -s histappend
 
 # zsh-like tab-completion
 bind 'set show-all-if-ambiguous on'
-bind 'TAB:menu-complete'
 
 
 export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\[$(tput setaf 2)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 2)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 2)\]]\[$(tput setaf 5)\]\\$ \[$(tput sgr0)\]"
