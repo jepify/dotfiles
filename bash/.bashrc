@@ -34,6 +34,25 @@ parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
 }
 
+
+za() {
+    zathura "$1" &>/dev/null &
+}
+
+alias radionord="mplayer -afm ffmpeg http://netradio.radionord.dk:8000/RadioNord"
+
+#books
+alias lpb="za ~/au/optimization/linearprogramming.pdf"    
+alias dno="za ~/bachelor-2020/dno.pdf"
+alias dlb="za ~/au/deep-learning/deeplearningbook.pdf"
+alias wot="za ~/au/p2p-iot/webofthings.pdf"
+alias cpt="za ~/au/cryptology/cryptography.pdf"
+
+alias rptimm="ssh jep@192.168.43.44"
+
+
+
+
 #export PS1="\[$(tput bold)\]\[\033[38;5;10m\][\u@\h\[$(tput sgr0)\] \[$(tput bold)\]\[\033[38;5;13m\]\W\[$(tput sgr0)\]\[\033[38;5;10m\]]\[$(tput sgr0)\] $(parse_git_branch)\[$(tput bold)\]\[\033[38;5;13m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 if [ "$color_prompt" = yes ]; then
  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\][\u@\h\[\033[00m\] \[\033[01;95m\]\W\[\033[01;32m\]]\[\033[01;31m\]$(parse_git_branch)\[\033[95m\]\$ \[\033[0m\]'
