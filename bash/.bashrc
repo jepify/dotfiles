@@ -41,11 +41,11 @@ za() {
 alias radionord="mplayer -afm ffmpeg http://netradio.radionord.dk:8000/RadioNord"
 
 #books
-alias lpb="za ~/au/optimization/linearprogramming.pdf"    
-alias dno="za ~/bachelor-2020/dno.pdf"
-alias dlb="za ~/au/deep-learning/deeplearningbook.pdf"
-alias wot="za ~/au/p2p-iot/webofthings.pdf"
-alias cpt="za ~/au/cryptology/cryptography.pdf"
+alias lpb="za ~/au/books/linearprogramming.pdf"    
+alias dno="za ~/au/books/dno.pdf"
+alias dlb="za ~/au/books/deeplearningbook.pdf"
+alias wot="za ~/au/books/webofthings.pdf"
+alias cpt="za ~/au/books/cryptography.pdf"
 
 alias rptimm="ssh jep@192.168.43.44"
 
