@@ -11,7 +11,6 @@ alias la="ls -A -hN --color=auto --group-directories-first"
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
-xhost +local:root > /dev/null 2>&1
 
 #set -o vi
 
