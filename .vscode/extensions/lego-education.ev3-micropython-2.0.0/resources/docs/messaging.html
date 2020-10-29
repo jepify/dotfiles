@@ -1,0 +1,617 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>messaging – Messaging &mdash; ev3-micropython 2.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'2.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Signals and Units" href="signaltypes.html" />
+    <link rel="prev" title="media – Sounds and Images" href="media.html" />
+    <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="startinstall.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startbrick.html">Using the EV3 Brick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startrun.html">Creating and running programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startlinux.html">Accessing advanced EV3 features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startupgrade.html">Upgrading from v1.0 to v2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Pybricks Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – Programmable Hubs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – Generic I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – Parameters and Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – Timing and Data logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – Sounds and Images</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – Messaging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pairing-two-ev3-bricks">Pairing two EV3 Bricks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#server-and-client">Server and Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mailboxes">Mailboxes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#making-bigger-networks">Making bigger networks</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Engineering Extras</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="signaltypes.html">Signals and Units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motors.html">More about Motors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Robot Educator Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_basic.html">Basic Movement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_ultrasonic.html">Obstacle Avoidance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_line.html">Line Following</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Core Set Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/color_sorter.html">Color Sorter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_arm.html">Robot Arm H25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/puppy.html">Puppy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/gyro_boy.html">Gyro Boy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Expansion Set Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/elephant.html">Elephant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/stair_climber.html">Stair Climber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/tank_bot.html">Tank Bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/znap.html">Znap</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ev3-micropython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – Messaging</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/messaging.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pybricks.messaging">
+<span id="messaging-messaging"></span><h1><a class="reference internal" href="#module-pybricks.messaging" title="pybricks.messaging"><code class="xref py py-mod docutils literal notranslate"><span class="pre">messaging</span></code></a> – Messaging<a class="headerlink" href="#module-pybricks.messaging" title="Permalink to this headline">¶</a></h1>
+<p>An EV3 Brick can send information to another EV3 Brick using Bluetooth. This
+page shows you how to connect multiple bricks and how to write scripts to send
+messages between them.</p>
+<div class="section" id="pairing-two-ev3-bricks">
+<h2>Pairing two EV3 Bricks<a class="headerlink" href="#pairing-two-ev3-bricks" title="Permalink to this headline">¶</a></h2>
+<p>Before two EV3 bricks can exchange messages, they must be <em>paired</em>.
+You’ll need to do this only the first time. First, activate bluetooth on all
+EV3 bricks as shown in <a class="reference internal" href="#fig-bluetooth-on"><span class="std std-numref">Figure 19</span></a>.</p>
+<div class="figure align-center" id="id1">
+<span id="fig-bluetooth-on"></span><img alt="bluetooth_on" src="_images/bluetooth_on_label.png" style="width: 100%;" />
+<p class="caption"><span class="caption-number">Figure 19 </span><span class="caption-text">Turn on Bluetooth and make Bluetooth visible.</span></p>
+</div>
+<p>Now you can make one EV3 Brick search for the other and pair with it, as shown
+in <a class="reference internal" href="#fig-bluetooth-pair"><span class="std std-numref">Figure 20</span></a>.</p>
+<p>Once they are paired, do <em>not</em> click <em>connect</em> in the menu that appears.
+The connection will be made when you run your programs, as described below.</p>
+<div class="figure align-center" id="id2">
+<span id="fig-bluetooth-pair"></span><img alt="bluetooth_pair" src="_images/bluetooth_pair_label.png" style="width: 100%;" />
+<p class="caption"><span class="caption-number">Figure 20 </span><span class="caption-text">Pairing one EV3 Brick to another EV3 Brick.</span></p>
+</div>
+<p>When you scan for Bluetooth devices, you’ll see a list of device names. By
+default, all EV3 Bricks are named <em>ev3dev</em>. Click <a class="reference internal" href="startlinux.html#hostname"><span class="std std-ref">here</span></a> to
+learn how to change that name. This makes it easy to tell them apart.</p>
+<p>Repeat the steps in <a class="reference internal" href="#fig-bluetooth-pair"><span class="std std-numref">Figure 20</span></a> if you want to pair more than
+two EV3 Bricks.</p>
+</div>
+<div class="section" id="server-and-client">
+<h2>Server and Client<a class="headerlink" href="#server-and-client" title="Permalink to this headline">¶</a></h2>
+<p>A wireless network consists of EV3 Bricks acting as servers or clients. A
+example with one server and one client is shown in <a class="reference internal" href="#fig-messaging"><span class="std std-numref">Figure 21</span></a>.
+Messages can be sent in both ways: the server can send a message to the client,
+and the client can send a message to the server.</p>
+<div class="figure align-center" id="id3">
+<span id="fig-messaging"></span><img alt="messaging" src="_images/messaging_label.png" style="width: 90%;" />
+<p class="caption"><span class="caption-number">Figure 21 </span><span class="caption-text">An example network with one server and one clients.</span></p>
+</div>
+<p class="toggle-header"><strong>Show/hide full server example</strong></p>
+<div class="toggle-content docutils container">
+<p><strong>Example: EV3 Bluetooth Server.</strong></p>
+<p>This is the full version of the excerpt shown in <a class="reference internal" href="#fig-messaging"><span class="std std-numref">Figure 21</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env pybricks-micropython</span>
+
+<span class="c1"># Before running this program, make sure the client and server EV3 bricks are</span>
+<span class="c1"># paired using Bluetooth, but do NOT connect them. The program will take care</span>
+<span class="c1"># of establishing the connection.</span>
+
+<span class="c1"># The server must be started before the client!</span>
+
+<span class="kn">from</span> <span class="nn">pybricks.messaging</span> <span class="kn">import</span> <span class="n">BluetoothMailboxServer</span><span class="p">,</span> <span class="n">TextMailbox</span>
+
+<span class="n">server</span> <span class="o">=</span> <span class="n">BluetoothMailboxServer</span><span class="p">()</span>
+<span class="n">mbox</span> <span class="o">=</span> <span class="n">TextMailbox</span><span class="p">(</span><span class="s1">&#39;greeting&#39;</span><span class="p">,</span> <span class="n">server</span><span class="p">)</span>
+
+<span class="c1"># The server must be started before the client!</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;waiting for connection...&#39;</span><span class="p">)</span>
+<span class="n">server</span><span class="o">.</span><span class="n">wait_for_connection</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;connected!&#39;</span><span class="p">)</span>
+
+<span class="c1"># In this program, the server waits for the client to send the first message</span>
+<span class="c1"># and then sends a reply.</span>
+<span class="n">mbox</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mbox</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="n">mbox</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;hello to you!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p class="toggle-header"><strong>Show/hide full client example</strong></p>
+<div class="toggle-content docutils container">
+<p><strong>Example: EV3 Bluetooth Client.</strong></p>
+<p>This is the full version of the excerpt shown in <a class="reference internal" href="#fig-messaging"><span class="std std-numref">Figure 21</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env pybricks-micropython</span>
+
+<span class="c1"># Before running this program, make sure the client and server EV3 bricks are</span>
+<span class="c1"># paired using Bluetooth, but do NOT connect them. The program will take care</span>
+<span class="c1"># of establishing the connection.</span>
+
+<span class="c1"># The server must be started before the client!</span>
+
+<span class="kn">from</span> <span class="nn">pybricks.messaging</span> <span class="kn">import</span> <span class="n">BluetoothMailboxClient</span><span class="p">,</span> <span class="n">TextMailbox</span>
+
+<span class="c1"># This is the name of the remote EV3 or PC we are connecting to.</span>
+<span class="n">SERVER</span> <span class="o">=</span> <span class="s1">&#39;ev3dev&#39;</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">BluetoothMailboxClient</span><span class="p">()</span>
+<span class="n">mbox</span> <span class="o">=</span> <span class="n">TextMailbox</span><span class="p">(</span><span class="s1">&#39;greeting&#39;</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;establishing connection...&#39;</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">SERVER</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;connected!&#39;</span><span class="p">)</span>
+
+<span class="c1"># In this program, the client sends the first message and then waits for the</span>
+<span class="c1"># server to reply.</span>
+<span class="n">mbox</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;hello!&#39;</span><span class="p">)</span>
+<span class="n">mbox</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mbox</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<p>The only difference between the client and the server is which one initiates
+the connection at the beginning of the program:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The <strong>server</strong> must always be started first. It uses the
+<code class="docutils literal notranslate"><span class="pre">BluetoothMailboxServer</span></code> class. Then it waits for clients using
+the <code class="docutils literal notranslate"><span class="pre">wait_for_connection</span></code> method.</li>
+<li>The <strong>client</strong> uses the <code class="docutils literal notranslate"><span class="pre">BluetoothMailboxClient</span></code> class. It
+connects to the server using the <code class="docutils literal notranslate"><span class="pre">connect</span></code> method.</li>
+<li>After that, sending and receiving messages is done in the same way on
+both EV3 Bricks.</li>
+</ul>
+</div></blockquote>
+<dl class="class">
+<dt id="pybricks.messaging.BluetoothMailboxServer">
+<em class="property">class </em><code class="descname">BluetoothMailboxServer</code><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object that represents a Bluetooth connection from one or more remote
+EV3s.</p>
+<p>The remote EV3s can either be running MicroPython or the standard EV3
+firmware.</p>
+<p>A “server” waits for a “client” to connect to it.</p>
+<dl class="method">
+<dt id="pybricks.messaging.BluetoothMailboxServer.wait_for_connection">
+<code class="descname">wait_for_connection</code><span class="sig-paren">(</span><em>count=1</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxServer.wait_for_connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Waits for a <a class="reference internal" href="#pybricks.messaging.BluetoothMailboxClient" title="pybricks.messaging.BluetoothMailboxClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">BluetoothMailboxClient</span></code></a> on a remote device to
+connect.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>count</strong> (<em>int</em>) – The number of remote connections to wait for.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code> – There was a problem establishing the connection.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.messaging.BluetoothMailboxServer.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxServer.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes all connections.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pybricks.messaging.BluetoothMailboxClient">
+<em class="property">class </em><code class="descname">BluetoothMailboxClient</code><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object that represents a Bluetooth connection to one or more remote EV3s.</p>
+<p>The remote EV3s can either be running MicroPython or the standard EV3
+firmware.</p>
+<p>A “client” initiates a connection to a waiting “server”.</p>
+<dl class="method">
+<dt id="pybricks.messaging.BluetoothMailboxClient.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><em>brick</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxClient.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connects to an <a class="reference internal" href="#pybricks.messaging.BluetoothMailboxServer" title="pybricks.messaging.BluetoothMailboxServer"><code class="xref py py-class docutils literal notranslate"><span class="pre">BluetoothMailboxServer</span></code></a> on another device.</p>
+<p>The remote device must be paired and waiting for a connection. See
+<a class="reference internal" href="#pybricks.messaging.BluetoothMailboxServer.wait_for_connection" title="pybricks.messaging.BluetoothMailboxServer.wait_for_connection"><code class="xref py py-meth docutils literal notranslate"><span class="pre">BluetoothMailboxServer.wait_for_connection()</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>brick</strong> (<em>str</em>) – The name or Bluetooth address of the remote EV3 to connect to.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code> – There was a problem establishing the connection.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.messaging.BluetoothMailboxClient.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.BluetoothMailboxClient.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes all connections.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="mailboxes">
+<h2>Mailboxes<a class="headerlink" href="#mailboxes" title="Permalink to this headline">¶</a></h2>
+<p>Mailboxes are used to send data to and from other EV3 Bricks.</p>
+<p>A Mailbox has a <code class="docutils literal notranslate"><span class="pre">name</span></code>, similar to the “subject” of an email. If two EV3
+Bricks have a Mailbox with the same name, they can send messages between them.
+Each EV3 Brick can read its own Mailbox, and send messages to the Mailbox on
+the other EV3 Brick.</p>
+<p>Depending on the type of messages you would like to exchange (bytes, booleans,
+numbers, or text), you can choose one of the Mailboxes below.</p>
+<dl class="class">
+<dt id="pybricks.messaging.Mailbox">
+<em class="property">class </em><code class="descname">Mailbox</code><span class="sig-paren">(</span><em>name</em>, <em>connection</em>, <em>encode=None</em>, <em>decode=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.Mailbox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object that represents a mailbox containing data.</p>
+<p>You can read data that is delivered by other EV3 bricks, or send data
+to other bricks that have the same mailbox.</p>
+<p>By default, the mailbox reads and send only bytes. To send other
+data, you can provide an <code class="docutils literal notranslate"><span class="pre">encode</span></code> function that encodes your Python
+object into bytes, and a <code class="docutils literal notranslate"><span class="pre">decode</span></code> function to convert bytes back to
+a Python object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – The name of this mailbox.</li>
+<li><strong>connection</strong> – A connection object such as <a class="reference internal" href="#pybricks.messaging.BluetoothMailboxClient" title="pybricks.messaging.BluetoothMailboxClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">BluetoothMailboxClient</span></code></a>.</li>
+<li><strong>encode</strong> (<em>callable</em>) – Function that encodes a Python object to bytes.</li>
+<li><strong>decode</strong> (<em>callable</em>) – Function that creates a new Python object from bytes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pybricks.messaging.Mailbox.read">
+<code class="descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.Mailbox.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the current value of the mailbox.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The current value or <code class="docutils literal notranslate"><span class="pre">None</span></code> if the mailbox is empty.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.messaging.Mailbox.send">
+<code class="descname">send</code><span class="sig-paren">(</span><em>value</em>, <em>brick=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.Mailbox.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a value to this mailbox on connected devices.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>value</strong> – The value that will be delivered to the mailbox.</li>
+<li><strong>brick</strong> (<em>str</em>) – The name or Bluetooth address of the brick or <code class="docutils literal notranslate"><span class="pre">None</span></code> to
+to broadcast to all connected devices.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code> – There is a problem with the connection.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.messaging.Mailbox.wait">
+<code class="descname">wait</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.Mailbox.wait" title="Permalink to this definition">¶</a></dt>
+<dd><p>Waits for the mailbox to be updated by remote device.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.messaging.Mailbox.wait_new">
+<code class="descname">wait_new</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.Mailbox.wait_new" title="Permalink to this definition">¶</a></dt>
+<dd><p>Waits for a new value to be delivered to the mailbox that is not
+equal to the current value in the mailbox.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The new value.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pybricks.messaging.LogicMailbox">
+<em class="property">class </em><code class="descname">LogicMailbox</code><span class="sig-paren">(</span><em>name</em>, <em>connection</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.LogicMailbox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object that represents a mailbox containing boolean data.</p>
+<p>This works just like a regular <a class="reference internal" href="#pybricks.messaging.Mailbox" title="pybricks.messaging.Mailbox"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mailbox</span></code></a>, but values
+must be <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>This is compatible with the “logic” mailbox type in EV3-G.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – The name of this mailbox.</li>
+<li><strong>connection</strong> – A connection object such as <a class="reference internal" href="#pybricks.messaging.BluetoothMailboxClient" title="pybricks.messaging.BluetoothMailboxClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">BluetoothMailboxClient</span></code></a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="pybricks.messaging.NumericMailbox">
+<em class="property">class </em><code class="descname">NumericMailbox</code><span class="sig-paren">(</span><em>name</em>, <em>connection</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.NumericMailbox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object that represents a mailbox containing numeric data.</p>
+<p>This works just like a regular <a class="reference internal" href="#pybricks.messaging.Mailbox" title="pybricks.messaging.Mailbox"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mailbox</span></code></a>, but values must be a
+number, such as <code class="docutils literal notranslate"><span class="pre">15</span></code> or <code class="docutils literal notranslate"><span class="pre">12.345</span></code></p>
+<p>This is compatible with the “numeric” mailbox type in EV3-G.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – The name of this mailbox.</li>
+<li><strong>connection</strong> – A connection object such as <a class="reference internal" href="#pybricks.messaging.BluetoothMailboxClient" title="pybricks.messaging.BluetoothMailboxClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">BluetoothMailboxClient</span></code></a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="pybricks.messaging.TextMailbox">
+<em class="property">class </em><code class="descname">TextMailbox</code><span class="sig-paren">(</span><em>name</em>, <em>connection</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.messaging.TextMailbox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object that represents a mailbox containing text data.</p>
+<p>This works just like a regular <a class="reference internal" href="#pybricks.messaging.Mailbox" title="pybricks.messaging.Mailbox"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mailbox</span></code></a>, but data must be a
+string, such as <code class="docutils literal notranslate"><span class="pre">'hello!'</span></code> or <code class="docutils literal notranslate"><span class="pre">'My</span> <span class="pre">name</span> <span class="pre">is</span> <span class="pre">EV3'</span></code>.</p>
+<p>This is compatible with the “text” mailbox type in EV3-G.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>str</em>) – The name of this mailbox.</li>
+<li><strong>connection</strong> – A connection object such as <a class="reference internal" href="#pybricks.messaging.BluetoothMailboxClient" title="pybricks.messaging.BluetoothMailboxClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">BluetoothMailboxClient</span></code></a>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="making-bigger-networks">
+<h2>Making bigger networks<a class="headerlink" href="#making-bigger-networks" title="Permalink to this headline">¶</a></h2>
+<p>The classes in this module are not limited to just two EV3 Bricks. for
+example, you can add more clients to your network. An example with pseudo-code
+is shown in <a class="reference internal" href="#fig-messaging-network"><span class="std std-numref">Figure 22</span></a>.</p>
+<div class="figure align-center" id="id4">
+<span id="fig-messaging-network"></span><img alt="messaging" src="_images/messaging_network_label.png" style="width: 90%;" />
+<p class="caption"><span class="caption-number">Figure 22 </span><span class="caption-text">An example network with one server and two clients.</span></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="signaltypes.html" class="btn btn-neutral float-right" title="Signals and Units" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="media.html" class="btn btn-neutral float-left" title="media – Sounds and Images" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

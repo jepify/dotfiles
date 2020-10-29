@@ -1,0 +1,2109 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>media – Sounds and Images &mdash; ev3-micropython 2.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'2.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="messaging – Messaging" href="messaging.html" />
+    <link rel="prev" title="robotics – Robotics" href="robotics.html" />
+    <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="startinstall.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startbrick.html">Using the EV3 Brick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startrun.html">Creating and running programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startlinux.html">Accessing advanced EV3 features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startupgrade.html">Upgrading from v1.0 to v2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Pybricks Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – Programmable Hubs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – Generic I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – Parameters and Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – Timing and Data logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – Robotics</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">media</span></code> – Sounds and Images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-pybricks.media.ev3dev"><code class="docutils literal notranslate"><span class="pre">media.ev3dev</span></code> – Sounds and Images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#image-files">Image Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sound-files">Sound Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fonts">Fonts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#image-manipulation">Image Manipulation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – Messaging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Engineering Extras</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="signaltypes.html">Signals and Units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motors.html">More about Motors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Robot Educator Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_basic.html">Basic Movement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_ultrasonic.html">Obstacle Avoidance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_line.html">Line Following</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Core Set Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/color_sorter.html">Color Sorter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_arm.html">Robot Arm H25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/puppy.html">Puppy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/gyro_boy.html">Gyro Boy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Expansion Set Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/elephant.html">Elephant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/stair_climber.html">Stair Climber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/tank_bot.html">Tank Bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/znap.html">Znap</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ev3-micropython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">media</span></code> – Sounds and Images</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/media.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pybricks.media">
+<span id="media-sounds-and-images"></span><h1><a class="reference internal" href="#module-pybricks.media" title="pybricks.media"><code class="xref py py-mod docutils literal notranslate"><span class="pre">media</span></code></a> – Sounds and Images<a class="headerlink" href="#module-pybricks.media" title="Permalink to this headline">¶</a></h1>
+<p>This module describes media such as sound and images that you can use in your
+projects. Media are divided into submodules that indicate on which platform
+they are available.</p>
+<div class="section" id="module-pybricks.media.ev3dev">
+<span id="media-ev3dev-sounds-and-images"></span><h2><a class="reference internal" href="#module-pybricks.media.ev3dev" title="pybricks.media.ev3dev"><code class="xref py py-mod docutils literal notranslate"><span class="pre">media.ev3dev</span></code></a> – Sounds and Images<a class="headerlink" href="#module-pybricks.media.ev3dev" title="Permalink to this headline">¶</a></h2>
+<p>EV3 MicroPython is built on top of ev3dev, which comes with a variety of image
+and sound files. You can access them using the classes below.</p>
+<p>You can also use your own sound and image files by placing them in your project
+folder.</p>
+<div class="section" id="image-files">
+<h3>Image Files<a class="headerlink" href="#image-files" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="pybricks.media.ev3dev.ImageFile">
+<em class="property">class </em><code class="descname">ImageFile</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Paths to standard EV3 images.</p>
+<p class="toggle-header"><strong>Information</strong></p>
+<div class="toggle-content docutils container">
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.ACCEPT">
+<code class="descname">ACCEPT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.ACCEPT" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/accept.png" src="_images/accept.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.BACKWARD">
+<code class="descname">BACKWARD</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.BACKWARD" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/backward.png" src="_images/backward.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.DECLINE">
+<code class="descname">DECLINE</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.DECLINE" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/decline.png" src="_images/decline.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.FORWARD">
+<code class="descname">FORWARD</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.FORWARD" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/forward.png" src="_images/forward.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.LEFT">
+<code class="descname">LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.LEFT" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/left.png" src="_images/left.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.NO_GO">
+<code class="descname">NO_GO</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.NO_GO" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/no_go.png" src="_images/no_go.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.QUESTION_MARK">
+<code class="descname">QUESTION_MARK</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.QUESTION_MARK" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/question_mark.png" src="_images/question_mark.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.RIGHT">
+<code class="descname">RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/right.png" src="_images/right.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.STOP_1">
+<code class="descname">STOP_1</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.STOP_1" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/stop_1.png" src="_images/stop_1.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.STOP_2">
+<code class="descname">STOP_2</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.STOP_2" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/stop_2.png" src="_images/stop_2.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.THUMBS_DOWN">
+<code class="descname">THUMBS_DOWN</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.THUMBS_DOWN" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/thumbs_down.png" src="_images/thumbs_down.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.THUMBS_UP">
+<code class="descname">THUMBS_UP</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.THUMBS_UP" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/thumbs_up.png" src="_images/thumbs_up.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.WARNING">
+<code class="descname">WARNING</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.WARNING" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/warning.png" src="_images/warning.png" style="width: 15%;" />
+</dd></dl>
+
+</div>
+<p class="toggle-header"><strong>LEGO</strong></p>
+<div class="toggle-content docutils container">
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.EV3">
+<code class="descname">EV3</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.EV3" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/ev3.png" src="_images/ev3.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.EV3_ICON">
+<code class="descname">EV3_ICON</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.EV3_ICON" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/ev3_icon.png" src="_images/ev3_icon.png" style="width: 15%;" />
+</dd></dl>
+
+</div>
+<p class="toggle-header"><strong>Objects</strong></p>
+<div class="toggle-content docutils container">
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.TARGET">
+<code class="descname">TARGET</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.TARGET" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/target.png" src="_images/target.png" style="width: 15%;" />
+</dd></dl>
+
+</div>
+<p class="toggle-header"><strong>Eyes</strong></p>
+<div class="toggle-content docutils container">
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.ANGRY">
+<code class="descname">ANGRY</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.ANGRY" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/angry.png" src="_images/angry.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.AWAKE">
+<code class="descname">AWAKE</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.AWAKE" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/awake.png" src="_images/awake.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.BOTTOM_LEFT">
+<code class="descname">BOTTOM_LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.BOTTOM_LEFT" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/bottom_left.png" src="_images/bottom_left.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.BOTTOM_RIGHT">
+<code class="descname">BOTTOM_RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.BOTTOM_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/bottom_right.png" src="_images/bottom_right.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.CRAZY_1">
+<code class="descname">CRAZY_1</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.CRAZY_1" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/crazy_1.png" src="_images/crazy_1.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.CRAZY_2">
+<code class="descname">CRAZY_2</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.CRAZY_2" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/crazy_2.png" src="_images/crazy_2.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.DIZZY">
+<code class="descname">DIZZY</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.DIZZY" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/dizzy.png" src="_images/dizzy.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.DOWN">
+<code class="descname">DOWN</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.DOWN" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/down.png" src="_images/down.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.EVIL">
+<code class="descname">EVIL</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.EVIL" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/evil.png" src="_images/evil.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.KNOCKED_OUT">
+<code class="descname">KNOCKED_OUT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.KNOCKED_OUT" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/knocked_out.png" src="_images/knocked_out.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.MIDDLE_LEFT">
+<code class="descname">MIDDLE_LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.MIDDLE_LEFT" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/middle_left.png" src="_images/middle_left.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.MIDDLE_RIGHT">
+<code class="descname">MIDDLE_RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.MIDDLE_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/middle_right.png" src="_images/middle_right.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.NEUTRAL">
+<code class="descname">NEUTRAL</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.NEUTRAL" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/neutral.png" src="_images/neutral.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.PINCHED_LEFT">
+<code class="descname">PINCHED_LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.PINCHED_LEFT" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/pinched_left.png" src="_images/pinched_left.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.PINCHED_MIDDLE">
+<code class="descname">PINCHED_MIDDLE</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.PINCHED_MIDDLE" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/pinched_middle.png" src="_images/pinched_middle.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.PINCHED_RIGHT">
+<code class="descname">PINCHED_RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.PINCHED_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/pinched_right.png" src="_images/pinched_right.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.SLEEPING">
+<code class="descname">SLEEPING</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.SLEEPING" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/sleeping.png" src="_images/sleeping.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.TIRED_LEFT">
+<code class="descname">TIRED_LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.TIRED_LEFT" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/tired_left.png" src="_images/tired_left.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.TIRED_MIDDLE">
+<code class="descname">TIRED_MIDDLE</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.TIRED_MIDDLE" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/tired_middle.png" src="_images/tired_middle.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.TIRED_RIGHT">
+<code class="descname">TIRED_RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.TIRED_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/tired_right.png" src="_images/tired_right.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.UP">
+<code class="descname">UP</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.UP" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/up.png" src="_images/up.png" style="width: 15%;" />
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.ImageFile.WINKING">
+<code class="descname">WINKING</code><a class="headerlink" href="#pybricks.media.ev3dev.ImageFile.WINKING" title="Permalink to this definition">¶</a></dt>
+<dd><img alt="_images/winking.png" src="_images/winking.png" style="width: 15%;" />
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="sound-files">
+<h3>Sound Files<a class="headerlink" href="#sound-files" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="pybricks.media.ev3dev.SoundFile">
+<em class="property">class </em><code class="descname">SoundFile</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Paths to standard EV3 sounds.</p>
+<p class="toggle-header"><strong>Expressions</strong></p>
+<div class="toggle-content docutils container">
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.BOING">
+<code class="descname">BOING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BOING" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/boing.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/boing.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.BOO">
+<code class="descname">BOO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BOO" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/boo.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/boo.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.CHEERING">
+<code class="descname">CHEERING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CHEERING" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/cheering.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/cheering.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.CRUNCHING">
+<code class="descname">CRUNCHING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CRUNCHING" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/crunching.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/crunching.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.CRYING">
+<code class="descname">CRYING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CRYING" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/crying.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/crying.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.FANFARE">
+<code class="descname">FANFARE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FANFARE" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/fanfare.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/fanfare.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.KUNG_FU">
+<code class="descname">KUNG_FU</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.KUNG_FU" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/kung_fu.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/kung_fu.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.LAUGHING_1">
+<code class="descname">LAUGHING_1</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.LAUGHING_1" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/laughing_1.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/laughing_1.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.LAUGHING_2">
+<code class="descname">LAUGHING_2</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.LAUGHING_2" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/laughing_2.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/laughing_2.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.MAGIC_WAND">
+<code class="descname">MAGIC_WAND</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MAGIC_WAND" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/magic_wand.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/magic_wand.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.OUCH">
+<code class="descname">OUCH</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.OUCH" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/ouch.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/ouch.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.SHOUTING">
+<code class="descname">SHOUTING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SHOUTING" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/shouting.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/shouting.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.SMACK">
+<code class="descname">SMACK</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SMACK" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/smack.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/smack.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.SNEEZING">
+<code class="descname">SNEEZING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SNEEZING" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/sneezing.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/sneezing.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.SNORING">
+<code class="descname">SNORING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SNORING" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/snoring.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/snoring.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.UH_OH">
+<code class="descname">UH_OH</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.UH_OH" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/uh-oh.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/uh-oh.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+</div>
+<p class="toggle-header"><strong>Information</strong></p>
+<div class="toggle-content docutils container">
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.ACTIVATE">
+<code class="descname">ACTIVATE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ACTIVATE" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/activate.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/activate.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.ANALYZE">
+<code class="descname">ANALYZE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ANALYZE" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/analyze.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/analyze.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.BACKWARDS">
+<code class="descname">BACKWARDS</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BACKWARDS" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/backwards.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/backwards.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.COLOR">
+<code class="descname">COLOR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.COLOR" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/color.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/color.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.DETECTED">
+<code class="descname">DETECTED</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DETECTED" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/detected.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/detected.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.DOWN">
+<code class="descname">DOWN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOWN" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/down.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/down.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.ERROR">
+<code class="descname">ERROR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ERROR" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/error.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/error.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.ERROR_ALARM">
+<code class="descname">ERROR_ALARM</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ERROR_ALARM" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/error_alarm.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/error_alarm.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.FLASHING">
+<code class="descname">FLASHING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FLASHING" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/flashing.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/flashing.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.FORWARD">
+<code class="descname">FORWARD</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FORWARD" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/forward.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/forward.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.LEFT">
+<code class="descname">LEFT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.LEFT" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/left.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/left.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.OBJECT">
+<code class="descname">OBJECT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.OBJECT" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/object.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/object.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.RIGHT">
+<code class="descname">RIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/right.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/right.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.SEARCHING">
+<code class="descname">SEARCHING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SEARCHING" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/searching.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/searching.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.START">
+<code class="descname">START</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.START" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/start.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/start.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.STOP">
+<code class="descname">STOP</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.STOP" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/stop.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/stop.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.TOUCH">
+<code class="descname">TOUCH</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.TOUCH" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/touch.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/touch.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.TURN">
+<code class="descname">TURN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.TURN" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/turn.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/turn.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.UP">
+<code class="descname">UP</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.UP" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/up.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/up.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+</div>
+<p class="toggle-header"><strong>Communication</strong></p>
+<div class="toggle-content docutils container">
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.BRAVO">
+<code class="descname">BRAVO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BRAVO" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/bravo.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/bravo.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.EV3">
+<code class="descname">EV3</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.EV3" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/ev3.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/ev3.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.FANTASTIC">
+<code class="descname">FANTASTIC</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FANTASTIC" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/fantastic.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/fantastic.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.GAME_OVER">
+<code class="descname">GAME_OVER</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GAME_OVER" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/game_over.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/game_over.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.GO">
+<code class="descname">GO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GO" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/go.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/go.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.GOOD_JOB">
+<code class="descname">GOOD_JOB</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GOOD_JOB" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/good_job.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/good_job.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.GOOD">
+<code class="descname">GOOD</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GOOD" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/good.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/good.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.GOODBYE">
+<code class="descname">GOODBYE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GOODBYE" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/goodbye.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/goodbye.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.HELLO">
+<code class="descname">HELLO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.HELLO" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/hello.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/hello.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.HI">
+<code class="descname">HI</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.HI" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/hi.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/hi.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.LEGO">
+<code class="descname">LEGO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.LEGO" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/lego.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/lego.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.MINDSTORMS">
+<code class="descname">MINDSTORMS</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MINDSTORMS" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/mindstorms.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/mindstorms.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.MORNING">
+<code class="descname">MORNING</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MORNING" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/morning.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/morning.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.NO">
+<code class="descname">NO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.NO" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/no.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/no.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.OKAY">
+<code class="descname">OKAY</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.OKAY" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/okay.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/okay.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.OKEY_DOKEY">
+<code class="descname">OKEY_DOKEY</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.OKEY_DOKEY" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/okey-dokey.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/okey-dokey.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.SORRY">
+<code class="descname">SORRY</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SORRY" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/sorry.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/sorry.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.THANK_YOU">
+<code class="descname">THANK_YOU</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.THANK_YOU" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/thank_you.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/thank_you.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.YES">
+<code class="descname">YES</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.YES" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/yes.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/yes.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+</div>
+<p class="toggle-header"><strong>Movement sounds</strong></p>
+<div class="toggle-content docutils container">
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.SPEED_DOWN">
+<code class="descname">SPEED_DOWN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SPEED_DOWN" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/speed_down.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/speed_down.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.SPEED_IDLE">
+<code class="descname">SPEED_IDLE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SPEED_IDLE" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/speed_idle.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/speed_idle.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.SPEED_UP">
+<code class="descname">SPEED_UP</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SPEED_UP" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/speed_up.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/speed_up.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+</div>
+<p class="toggle-header"><strong>Colors</strong></p>
+<div class="toggle-content docutils container">
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.BLACK">
+<code class="descname">BLACK</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BLACK" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/black.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/black.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.BLUE">
+<code class="descname">BLUE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BLUE" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/blue.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/blue.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.BROWN">
+<code class="descname">BROWN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BROWN" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/brown.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/brown.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.GREEN">
+<code class="descname">GREEN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GREEN" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/green.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/green.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.RED">
+<code class="descname">RED</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.RED" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/red.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/red.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.WHITE">
+<code class="descname">WHITE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.WHITE" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/white.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/white.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.YELLOW">
+<code class="descname">YELLOW</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.YELLOW" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/yellow.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/yellow.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+</div>
+<p class="toggle-header"><strong>Mechanical</strong></p>
+<div class="toggle-content docutils container">
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.AIR_RELEASE">
+<code class="descname">AIR_RELEASE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.AIR_RELEASE" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/air_release.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/air_release.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.AIRBRAKE">
+<code class="descname">AIRBRAKE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.AIRBRAKE" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/airbrake.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/airbrake.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.BACKING_ALERT">
+<code class="descname">BACKING_ALERT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.BACKING_ALERT" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/backing_alert.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/backing_alert.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.HORN_1">
+<code class="descname">HORN_1</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.HORN_1" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/horn_1.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/horn_1.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.HORN_2">
+<code class="descname">HORN_2</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.HORN_2" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/horn_2.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/horn_2.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.LASER">
+<code class="descname">LASER</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.LASER" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/laser.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/laser.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.MOTOR_IDLE">
+<code class="descname">MOTOR_IDLE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MOTOR_IDLE" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/motor_idle.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/motor_idle.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.MOTOR_START">
+<code class="descname">MOTOR_START</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MOTOR_START" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/motor_start.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/motor_start.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.MOTOR_STOP">
+<code class="descname">MOTOR_STOP</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.MOTOR_STOP" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/motor_stop.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/motor_stop.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.RATCHET">
+<code class="descname">RATCHET</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.RATCHET" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/ratchet.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/ratchet.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.SONAR">
+<code class="descname">SONAR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SONAR" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/sonar.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/sonar.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.TICK_TACK">
+<code class="descname">TICK_TACK</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.TICK_TACK" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/tick_tack.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/tick_tack.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+</div>
+<p class="toggle-header"><strong>Animal sounds</strong></p>
+<div class="toggle-content docutils container">
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.CAT_PURR">
+<code class="descname">CAT_PURR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CAT_PURR" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/cat_purr.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/cat_purr.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.DOG_BARK_1">
+<code class="descname">DOG_BARK_1</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOG_BARK_1" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/dog_bark_1.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/dog_bark_1.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.DOG_BARK_2">
+<code class="descname">DOG_BARK_2</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOG_BARK_2" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/dog_bark_2.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/dog_bark_2.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.DOG_GROWL">
+<code class="descname">DOG_GROWL</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOG_GROWL" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/dog_growl.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/dog_growl.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.DOG_SNIFF">
+<code class="descname">DOG_SNIFF</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOG_SNIFF" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/dog_sniff.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/dog_sniff.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.DOG_WHINE">
+<code class="descname">DOG_WHINE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.DOG_WHINE" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/dog_whine.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/dog_whine.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.ELEPHANT_CALL">
+<code class="descname">ELEPHANT_CALL</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ELEPHANT_CALL" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/elephant_call.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/elephant_call.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.INSECT_BUZZ_1">
+<code class="descname">INSECT_BUZZ_1</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.INSECT_BUZZ_1" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/insect_buzz_1.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/insect_buzz_1.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.INSECT_BUZZ_2">
+<code class="descname">INSECT_BUZZ_2</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.INSECT_BUZZ_2" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/insect_buzz_2.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/insect_buzz_2.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.INSECT_CHIRP">
+<code class="descname">INSECT_CHIRP</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.INSECT_CHIRP" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/insect_chirp.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/insect_chirp.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.SNAKE_HISS">
+<code class="descname">SNAKE_HISS</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SNAKE_HISS" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/snake_hiss.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/snake_hiss.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.SNAKE_RATTLE">
+<code class="descname">SNAKE_RATTLE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SNAKE_RATTLE" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/snake_rattle.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/snake_rattle.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.T_REX_ROAR">
+<code class="descname">T_REX_ROAR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.T_REX_ROAR" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/t-rex_roar.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/t-rex_roar.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+</div>
+<p class="toggle-header"><strong>Numbers</strong></p>
+<div class="toggle-content docutils container">
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.ZERO">
+<code class="descname">ZERO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ZERO" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/zero.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/zero.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.ONE">
+<code class="descname">ONE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.ONE" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/one.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/one.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.TWO">
+<code class="descname">TWO</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.TWO" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/two.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/two.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.THREE">
+<code class="descname">THREE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.THREE" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/three.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/three.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.FOUR">
+<code class="descname">FOUR</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FOUR" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/four.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/four.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.FIVE">
+<code class="descname">FIVE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.FIVE" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/five.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/five.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.SIX">
+<code class="descname">SIX</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SIX" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/six.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/six.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.SEVEN">
+<code class="descname">SEVEN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.SEVEN" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/seven.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/seven.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.EIGHT">
+<code class="descname">EIGHT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.EIGHT" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/eight.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/eight.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.NINE">
+<code class="descname">NINE</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.NINE" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/nine.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/nine.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.TEN">
+<code class="descname">TEN</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.TEN" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/ten.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/ten.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+</div>
+<p class="toggle-header"><strong>System sounds</strong></p>
+<div class="toggle-content docutils container">
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.CLICK">
+<code class="descname">CLICK</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CLICK" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/click.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/click.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.CONFIRM">
+<code class="descname">CONFIRM</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.CONFIRM" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/confirm.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/confirm.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.GENERAL_ALERT">
+<code class="descname">GENERAL_ALERT</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.GENERAL_ALERT" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/general_alert.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/general_alert.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.OVERPOWER">
+<code class="descname">OVERPOWER</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.OVERPOWER" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/overpower.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/overpower.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.media.ev3dev.SoundFile.READY">
+<code class="descname">READY</code><a class="headerlink" href="#pybricks.media.ev3dev.SoundFile.READY" title="Permalink to this definition">¶</a></dt>
+<dd><audio controls="controls">
+    <source src="_downloads/ready.wav" type="audio/wav">
+    Your browser does not support the <code>audio</code> element.
+</audio><p><a class="reference download internal" href="_downloads/ready.wav" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a></p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="fonts">
+<h3>Fonts<a class="headerlink" href="#fonts" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="pybricks.media.ev3dev.Font">
+<em class="property">class </em><code class="descname">Font</code><span class="sig-paren">(</span><em>family=None</em>, <em>size=12</em>, <em>bold=False</em>, <em>monospace=False</em>, <em>lang=None</em>, <em>script=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object that represents a font for writing text.</p>
+<p>The font object will be a font that is the “best” match based on the
+parameters given and available fonts installed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>family</strong> (<em>str</em>) – The preferred font family or <code class="docutils literal notranslate"><span class="pre">None</span></code> to use the default value.</li>
+<li><strong>size</strong> (<em>int</em>) – The preferred font size. Most fonts have sizes between 6 and 24.
+This is the “point” size and not the same as <a class="reference internal" href="#pybricks.media.ev3dev.Font.height" title="pybricks.media.ev3dev.Font.height"><code class="xref py py-attr docutils literal notranslate"><span class="pre">height</span></code></a>.</li>
+<li><strong>bold</strong> (<em>bool</em>) – When <code class="docutils literal notranslate"><span class="pre">True</span></code>, prefer bold fonts.</li>
+<li><strong>monospace</strong> (<em>bool</em>) – When <code class="docutils literal notranslate"><span class="pre">True</span></code> prefer monospaced fonts. This is useful for
+aligning multiple rows of text.</li>
+<li><strong>lang</strong> (<em>str</em>) – A language code, such as <code class="docutils literal notranslate"><span class="pre">'en'</span></code> or <code class="docutils literal notranslate"><span class="pre">'zh-cn'</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code> to
+use the default language. <a class="footnote-reference" href="#font-lang" id="id1">[1]</a></li>
+<li><strong>script</strong> (<em>str</em>) – A unicode script identifier such as <code class="docutils literal notranslate"><span class="pre">'Runr'</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="font-lang" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><p class="toggle-header first">Language codes</p>
+<div class="toggle-content last docutils container">
+<p>Note: Languages depend on installed fonts. Additional language
+codes are possible and some listed language codes may not have
+a satisfactory font.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">'aa'</span></code>: Afar</li>
+<li><code class="docutils literal notranslate"><span class="pre">'af'</span></code>: Afrikaans</li>
+<li><code class="docutils literal notranslate"><span class="pre">'an'</span></code>: Aragonese</li>
+<li><code class="docutils literal notranslate"><span class="pre">'av'</span></code>: Avaric</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ay'</span></code>: Aymara</li>
+<li><code class="docutils literal notranslate"><span class="pre">'az-az'</span></code>: Azerbaijani</li>
+<li><code class="docutils literal notranslate"><span class="pre">'be'</span></code>: Belarusian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'bg'</span></code>: Bulgarian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'bi'</span></code>: Bislama</li>
+<li><code class="docutils literal notranslate"><span class="pre">'bm'</span></code>: Bambara</li>
+<li><code class="docutils literal notranslate"><span class="pre">'br'</span></code>: Breton</li>
+<li><code class="docutils literal notranslate"><span class="pre">'bs'</span></code>: Bosnian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'bua'</span></code>: Buriat</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ca'</span></code>: Catalan</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ce'</span></code>: Chechen</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ch'</span></code>: Chamorro</li>
+<li><code class="docutils literal notranslate"><span class="pre">'co'</span></code>: Corsican</li>
+<li><code class="docutils literal notranslate"><span class="pre">'crh'</span></code>: Crimean</li>
+<li><code class="docutils literal notranslate"><span class="pre">'cs'</span></code>: Czech</li>
+<li><code class="docutils literal notranslate"><span class="pre">'csb'</span></code>: Kashubian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'cy'</span></code>: Welsh</li>
+<li><code class="docutils literal notranslate"><span class="pre">'da'</span></code>: Danish</li>
+<li><code class="docutils literal notranslate"><span class="pre">'de'</span></code>: German</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ee'</span></code>: Ewe</li>
+<li><code class="docutils literal notranslate"><span class="pre">'el'</span></code>: Greek</li>
+<li><code class="docutils literal notranslate"><span class="pre">'en'</span></code>: English</li>
+<li><code class="docutils literal notranslate"><span class="pre">'eo'</span></code>: Esperanto</li>
+<li><code class="docutils literal notranslate"><span class="pre">'es'</span></code>: Spanish</li>
+<li><code class="docutils literal notranslate"><span class="pre">'et'</span></code>: Estonian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'eu'</span></code>: Basque</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ff'</span></code>: Fulah</li>
+<li><code class="docutils literal notranslate"><span class="pre">'fi'</span></code>: Finnish</li>
+<li><code class="docutils literal notranslate"><span class="pre">'fil'</span></code>: Filipino</li>
+<li><code class="docutils literal notranslate"><span class="pre">'fj'</span></code>: Fijian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'fo'</span></code>: Faroese</li>
+<li><code class="docutils literal notranslate"><span class="pre">'fr'</span></code>: French</li>
+<li><code class="docutils literal notranslate"><span class="pre">'fur'</span></code>: Friulian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'fy'</span></code>: Western Frisian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ga'</span></code>: Irish</li>
+<li><code class="docutils literal notranslate"><span class="pre">'gd'</span></code>: Gaelic</li>
+<li><code class="docutils literal notranslate"><span class="pre">'gl'</span></code>: Galician</li>
+<li><code class="docutils literal notranslate"><span class="pre">'gv'</span></code>: Manx</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ha'</span></code>: Hausa</li>
+<li><code class="docutils literal notranslate"><span class="pre">'haw'</span></code>: Hawaiian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'he'</span></code>: Hebrew</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ho'</span></code>: Hiri Motu</li>
+<li><code class="docutils literal notranslate"><span class="pre">'hr'</span></code>: Croatian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'hsb'</span></code>: Upper Sorbian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ht'</span></code>: Haitian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'hu'</span></code>: Hungarian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ia'</span></code>: Interlingua</li>
+<li><code class="docutils literal notranslate"><span class="pre">'id'</span></code>: Indonesian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ie'</span></code>: Interlingue</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ik'</span></code>: Inupiaq</li>
+<li><code class="docutils literal notranslate"><span class="pre">'io'</span></code>: Ido</li>
+<li><code class="docutils literal notranslate"><span class="pre">'is'</span></code>: Icelandic</li>
+<li><code class="docutils literal notranslate"><span class="pre">'it'</span></code>: Italian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ja'</span></code>: Japanese</li>
+<li><code class="docutils literal notranslate"><span class="pre">'jv'</span></code>: Javanese</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ki'</span></code>: Kikuyu</li>
+<li><code class="docutils literal notranslate"><span class="pre">'kj'</span></code>: Kuanyama</li>
+<li><code class="docutils literal notranslate"><span class="pre">'kl'</span></code>: Kalaallisut</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ko'</span></code>: Korean</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ku-tr'</span></code>: Kurdish</li>
+<li><code class="docutils literal notranslate"><span class="pre">'kum'</span></code>: Kumyk</li>
+<li><code class="docutils literal notranslate"><span class="pre">'kw'</span></code>: Cornish</li>
+<li><code class="docutils literal notranslate"><span class="pre">'kwm'</span></code>: Kwambi</li>
+<li><code class="docutils literal notranslate"><span class="pre">'la'</span></code>: Latin</li>
+<li><code class="docutils literal notranslate"><span class="pre">'lb'</span></code>: Luxembourgish</li>
+<li><code class="docutils literal notranslate"><span class="pre">'lez'</span></code>: Lezghian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'lg'</span></code>: Ganda</li>
+<li><code class="docutils literal notranslate"><span class="pre">'li'</span></code>: Limburgan</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ln'</span></code>: Lingala</li>
+<li><code class="docutils literal notranslate"><span class="pre">'lt'</span></code>: Lithuanian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'lv'</span></code>: Latvian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'mg'</span></code>: Malagasy</li>
+<li><code class="docutils literal notranslate"><span class="pre">'mh'</span></code>: Marshallese</li>
+<li><code class="docutils literal notranslate"><span class="pre">'mi'</span></code>: Maori</li>
+<li><code class="docutils literal notranslate"><span class="pre">'mk'</span></code>: Macedonian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'mn-mn'</span></code>: Mongolian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'mo'</span></code>: Moldavian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ms'</span></code>: Malay</li>
+<li><code class="docutils literal notranslate"><span class="pre">'mt'</span></code>: Maltese</li>
+<li><code class="docutils literal notranslate"><span class="pre">'na'</span></code>: Nauru</li>
+<li><code class="docutils literal notranslate"><span class="pre">'nb'</span></code>: Norwegian Bokmål</li>
+<li><code class="docutils literal notranslate"><span class="pre">'nds'</span></code>: Low German</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ng'</span></code>: Ndonga</li>
+<li><code class="docutils literal notranslate"><span class="pre">'nl'</span></code>: Dutch</li>
+<li><code class="docutils literal notranslate"><span class="pre">'nn'</span></code>: Norwegian Nynorsk</li>
+<li><code class="docutils literal notranslate"><span class="pre">'no'</span></code>: Norwegian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'nr'</span></code>: South Ndebele</li>
+<li><code class="docutils literal notranslate"><span class="pre">'nso'</span></code>: Northern Sotho</li>
+<li><code class="docutils literal notranslate"><span class="pre">'nv'</span></code>: Navajo</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ny'</span></code>: Chichewa</li>
+<li><code class="docutils literal notranslate"><span class="pre">'oc'</span></code>: Occitan</li>
+<li><code class="docutils literal notranslate"><span class="pre">'om'</span></code>: Oromo</li>
+<li><code class="docutils literal notranslate"><span class="pre">'os'</span></code>: Ossetian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'pap-an'</span></code>: Papiamento, Netherlands Antilles</li>
+<li><code class="docutils literal notranslate"><span class="pre">'pap-aw'</span></code>: Papiamento, Aruba</li>
+<li><code class="docutils literal notranslate"><span class="pre">'pl'</span></code>: Polish</li>
+<li><code class="docutils literal notranslate"><span class="pre">'pt'</span></code>: Portuguese</li>
+<li><code class="docutils literal notranslate"><span class="pre">'qu'</span></code>: Quechua</li>
+<li><code class="docutils literal notranslate"><span class="pre">'quz'</span></code>: Cusco Quechua</li>
+<li><code class="docutils literal notranslate"><span class="pre">'rm'</span></code>: Romansh</li>
+<li><code class="docutils literal notranslate"><span class="pre">'rn'</span></code>: Rundi</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ro'</span></code>: Romanian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ru'</span></code>: Russian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'rw'</span></code>: Kinyarwanda</li>
+<li><code class="docutils literal notranslate"><span class="pre">'sc'</span></code>: Sardinian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'sco'</span></code>: Scots</li>
+<li><code class="docutils literal notranslate"><span class="pre">'se'</span></code>: Northern Sami</li>
+<li><code class="docutils literal notranslate"><span class="pre">'sel'</span></code>: Selkup</li>
+<li><code class="docutils literal notranslate"><span class="pre">'sg'</span></code>: Sango</li>
+<li><code class="docutils literal notranslate"><span class="pre">'sk'</span></code>: Slovak</li>
+<li><code class="docutils literal notranslate"><span class="pre">'sl'</span></code>: Slovenian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'sm'</span></code>: Samoan</li>
+<li><code class="docutils literal notranslate"><span class="pre">'sma'</span></code>: Southern Sami</li>
+<li><code class="docutils literal notranslate"><span class="pre">'smj'</span></code>: Lule Sami</li>
+<li><code class="docutils literal notranslate"><span class="pre">'smn'</span></code>: Inari Sami</li>
+<li><code class="docutils literal notranslate"><span class="pre">'sms'</span></code>: Skolt Sami</li>
+<li><code class="docutils literal notranslate"><span class="pre">'sn'</span></code>: Shona</li>
+<li><code class="docutils literal notranslate"><span class="pre">'so'</span></code>: Somali</li>
+<li><code class="docutils literal notranslate"><span class="pre">'sq'</span></code>: Albanian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'sr'</span></code>: Serbian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ss'</span></code>: Swati</li>
+<li><code class="docutils literal notranslate"><span class="pre">'st'</span></code>: Southern Sotho</li>
+<li><code class="docutils literal notranslate"><span class="pre">'su'</span></code>: Sundanese</li>
+<li><code class="docutils literal notranslate"><span class="pre">'sv'</span></code>: Swedish</li>
+<li><code class="docutils literal notranslate"><span class="pre">'sw'</span></code>: Swahili</li>
+<li><code class="docutils literal notranslate"><span class="pre">'tk'</span></code>: Turkmen</li>
+<li><code class="docutils literal notranslate"><span class="pre">'tl'</span></code>: Tagalog</li>
+<li><code class="docutils literal notranslate"><span class="pre">'tn'</span></code>: Tswana</li>
+<li><code class="docutils literal notranslate"><span class="pre">'to'</span></code>: Tonga</li>
+<li><code class="docutils literal notranslate"><span class="pre">'tr'</span></code>: Turkish</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ts'</span></code>: Tsonga</li>
+<li><code class="docutils literal notranslate"><span class="pre">'ty'</span></code>: Tahitian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'uk'</span></code>: Ukrainian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'uz'</span></code>: Uzbek</li>
+<li><code class="docutils literal notranslate"><span class="pre">'vo'</span></code>: Volapük</li>
+<li><code class="docutils literal notranslate"><span class="pre">'vot'</span></code>: Votic</li>
+<li><code class="docutils literal notranslate"><span class="pre">'wa'</span></code>: Walloon</li>
+<li><code class="docutils literal notranslate"><span class="pre">'wen'</span></code>: Sorbian</li>
+<li><code class="docutils literal notranslate"><span class="pre">'wo'</span></code>: Wolof</li>
+<li><code class="docutils literal notranslate"><span class="pre">'xh'</span></code>: Xhosa</li>
+<li><code class="docutils literal notranslate"><span class="pre">'yap'</span></code>: Yapese</li>
+<li><code class="docutils literal notranslate"><span class="pre">'yi'</span></code>: Yiddish</li>
+<li><code class="docutils literal notranslate"><span class="pre">'za'</span></code>: Zhuang</li>
+<li><code class="docutils literal notranslate"><span class="pre">'zh-cn'</span></code>: Chinese, China</li>
+<li><code class="docutils literal notranslate"><span class="pre">'zh-sg'</span></code>: Chinese, Singapore</li>
+<li><code class="docutils literal notranslate"><span class="pre">'zh-tw'</span></code>: Chinese, Taiwan</li>
+<li><code class="docutils literal notranslate"><span class="pre">'zu'</span></code>: Zulu</li>
+</ul>
+</div>
+</td></tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="pybricks.media.ev3dev.Font.DEFAULT">
+<code class="descname">DEFAULT</code><em class="property"> = Font('Lucida', 12)</em><a class="headerlink" href="#pybricks.media.ev3dev.Font.DEFAULT" title="Permalink to this definition">¶</a></dt>
+<dd><p>The default font.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pybricks.media.ev3dev.Font.family">
+<code class="descname">family</code><a class="headerlink" href="#pybricks.media.ev3dev.Font.family" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the family name of the font.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pybricks.media.ev3dev.Font.style">
+<code class="descname">style</code><a class="headerlink" href="#pybricks.media.ev3dev.Font.style" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a string describing the font style.</p>
+<p>Can be “Regular” or “Bold”.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pybricks.media.ev3dev.Font.width">
+<code class="descname">width</code><a class="headerlink" href="#pybricks.media.ev3dev.Font.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the width of the widest character of the font.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pybricks.media.ev3dev.Font.height">
+<code class="descname">height</code><a class="headerlink" href="#pybricks.media.ev3dev.Font.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the height of the font.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.media.ev3dev.Font.text_width">
+<code class="descname">text_width</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Font.text_width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the width of the text when the text is drawn using this font.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>text</strong> (<em>str</em>) – The text.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The width in pixels.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.media.ev3dev.Font.text_height">
+<code class="descname">text_height</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Font.text_height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the height of the text when the text is drawn using this font.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>text</strong> (<em>str</em>) – The text.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The height in pixels.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p><strong>Exploring more fonts</strong></p>
+<p>Behind the scenes, Pybricks uses <a class="reference external" href="https://www.freedesktop.org/wiki/Software/fontconfig/">Fontconfig</a> for fonts. The Fontconfig
+command line tools can be used to explore available fonts in more
+detail. To do so, go to the ev3dev device browser,
+right click on your EV3 brick, and click <em>Open SSH Terminal</em>. Then you can
+enter one of these commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># List available font families.</span>
+<span class="n">fc</span><span class="o">-</span><span class="nb">list</span> <span class="p">:</span><span class="n">scalable</span><span class="o">=</span><span class="n">false</span> <span class="n">family</span>
+<span class="c1"># Perform lookup similar to Font.DEFAULT</span>
+<span class="n">fc</span><span class="o">-</span><span class="n">match</span> <span class="p">:</span><span class="n">scalable</span><span class="o">=</span><span class="n">false</span><span class="p">:</span><span class="n">dpi</span><span class="o">=</span><span class="mi">119</span><span class="p">:</span><span class="n">family</span><span class="o">=</span><span class="n">Lucida</span><span class="p">:</span><span class="n">size</span><span class="o">=</span><span class="mi">12</span>
+<span class="c1"># Perform lookup similar to Font(size=24,lang=zh-cn)</span>
+<span class="n">fc</span><span class="o">-</span><span class="n">match</span> <span class="p">:</span><span class="n">scalable</span><span class="o">=</span><span class="n">false</span><span class="p">:</span><span class="n">dpi</span><span class="o">=</span><span class="mi">119</span><span class="p">:</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">:</span><span class="n">lang</span><span class="o">=</span><span class="n">zh</span><span class="o">-</span><span class="n">cn</span>
+</pre></div>
+</div>
+<p>Pybricks only allows the use of bitmap fonts (<code class="docutils literal notranslate"><span class="pre">scalable=false</span></code>)
+and the screen on the EV3 has 119 pixels per inch (<code class="docutils literal notranslate"><span class="pre">dpi=119</span></code>).</p>
+</dd></dl>
+
+</div>
+<div class="section" id="image-manipulation">
+<h3>Image Manipulation<a class="headerlink" href="#image-manipulation" title="Permalink to this headline">¶</a></h3>
+<p>Instead of drawing directly on the EV3 screen, you can make and interact
+with image files using the <code class="docutils literal notranslate"><span class="pre">Image</span></code> class given below.</p>
+<dl class="class">
+<dt id="pybricks.media.ev3dev.Image">
+<em class="property">class </em><code class="descname">Image</code><span class="sig-paren">(</span><em>source</em>, <em>sub=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object representing a graphics image. This can either be an in-memory
+copy of an image or the image displayed on a screen.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> (<em>str</em><em> or </em><a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><em>Image</em></a>) – <p>The source of the image.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">source</span></code> is a string, then the image will be loaded from
+the file path given by the string. Only <code class="docutils literal notranslate"><span class="pre">.png</span></code> files are
+supported. As a special case, if the string is <code class="docutils literal notranslate"><span class="pre">_screen_</span></code>,
+the image will be configured to draw directly on the screen.</p>
+<p>If an <a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> is given, the new object will contain a
+copy of the <code class="docutils literal notranslate"><span class="pre">source</span></code> image object.</p>
+</li>
+<li><strong>sub</strong> (<em>bool</em>) – <p>If <code class="docutils literal notranslate"><span class="pre">sub</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, then the image object will act as a
+sub-image of the <code class="docutils literal notranslate"><span class="pre">source</span></code> image (this only works if the type
+of <code class="docutils literal notranslate"><span class="pre">source</span></code> is <a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> and not when it is a <code class="docutils literal notranslate"><span class="pre">str</span></code>).</p>
+<p>Additional keyword arguments <code class="docutils literal notranslate"><span class="pre">x1</span></code>, <code class="docutils literal notranslate"><span class="pre">y1</span></code>, <code class="docutils literal notranslate"><span class="pre">x2</span></code>, <code class="docutils literal notranslate"><span class="pre">y2</span></code> are
+needed when <code class="docutils literal notranslate"><span class="pre">sub=True</span></code>. These specify the top-left and
+bottom-right coordinates in the <code class="docutils literal notranslate"><span class="pre">source</span></code> image that will be
+used as the bounds for the sub-image.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="staticmethod">
+<dt id="pybricks.media.ev3dev.Image.empty">
+<em class="property">static </em><code class="descname">empty</code><span class="sig-paren">(</span><em>width=&lt;screen width&gt;</em>, <em>height=&lt;screen height&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new empty <a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>width</strong> (<em>int</em>) – The width of the image in pixels.</li>
+<li><strong>height</strong> (<em>int</em>) – The height of the image in pixels.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A new image with all pixels set to <a class="reference internal" href="parameters.html#pybricks.parameters.Color.WHITE" title="pybricks.parameters.Color.WHITE"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Color.WHITE</span></code></a>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image">Image</a></p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code> – <code class="docutils literal notranslate"><span class="pre">width</span></code> or <code class="docutils literal notranslate"><span class="pre">height</span></code> is not a number.</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> – <code class="docutils literal notranslate"><span class="pre">width</span></code> or <code class="docutils literal notranslate"><span class="pre">height</span></code> is less than 1.</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">RuntimeError</span></code> – There was a problem allocating a new image.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Drawing text</p>
+<p>There are two ways to draw text on images. <a class="reference internal" href="#pybricks.media.ev3dev.Image.draw_text" title="pybricks.media.ev3dev.Image.draw_text"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw_text()</span></code></a> lets text be
+placed precisely on the image or <a class="reference internal" href="#pybricks.media.ev3dev.Image.print" title="pybricks.media.ev3dev.Image.print"><code class="xref py py-meth docutils literal notranslate"><span class="pre">print()</span></code></a> can be used to automatically
+print text on a new line.</p>
+<dl class="method">
+<dt id="pybricks.media.ev3dev.Image.draw_text">
+<code class="descname">draw_text</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>text</em>, <em>text_color=Color.BLACK</em>, <em>background_color=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws text on this image.</p>
+<p>The most recent font set using <a class="reference internal" href="#pybricks.media.ev3dev.Image.set_font" title="pybricks.media.ev3dev.Image.set_font"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_font()</span></code></a> will be used or
+<a class="reference internal" href="#pybricks.media.ev3dev.Font.DEFAULT" title="pybricks.media.ev3dev.Font.DEFAULT"><code class="xref py py-data docutils literal notranslate"><span class="pre">Font.DEFAULT</span></code></a> if no font has been set yet.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>int</em>) – The x-axis value where the left side of the text will start.</li>
+<li><strong>y</strong> (<em>int</em>) – The y-axis value where the top of the text will start.</li>
+<li><strong>text</strong> (<em>str</em>) – The text to draw.</li>
+<li><strong>text_color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – The color used for drawing the text.</li>
+<li><strong>background_color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – The color used to fill the rectangle behind the text or <code class="docutils literal notranslate"><span class="pre">None</span></code>
+for transparent background.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.media.ev3dev.Image.print">
+<code class="descname">print</code><span class="sig-paren">(</span><em>*args</em>, <em>sep=' '</em>, <em>end='\n'</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.print" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints a line of text on this image.</p>
+<p>This method works like the builtin <code class="docutils literal notranslate"><span class="pre">print()</span></code> function, but it writes
+on this image instead.</p>
+<p>You can set the font using <a class="reference internal" href="#pybricks.media.ev3dev.Image.set_font" title="pybricks.media.ev3dev.Image.set_font"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_font()</span></code></a>. If no font has been set,
+<a class="reference internal" href="#pybricks.media.ev3dev.Font.DEFAULT" title="pybricks.media.ev3dev.Font.DEFAULT"><code class="xref py py-data docutils literal notranslate"><span class="pre">Font.DEFAULT</span></code></a> will be used. The text is always printed used
+black text with a white background.</p>
+<p>Unlike the builtin <code class="docutils literal notranslate"><span class="pre">print()</span></code>, the text does not wrap if it is too
+wide to fit on this image. It just gets cut off. But if the text would
+go off of the bottom of this image, the entire image is scrolled up and
+the text is printed in the new blank area at the bottom of this image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>*</strong> (<em>object</em>) – Zero or more objects to print.</li>
+<li><strong>sep</strong> (<em>str</em>) – Separator that will be placed between each object that is
+printed.</li>
+<li><strong>end</strong> (<em>str</em>) – End of line that will be printed after the last object.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.media.ev3dev.Image.set_font">
+<code class="descname">set_font</code><span class="sig-paren">(</span><em>font</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.set_font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the font used for writing on this image.</p>
+<p>The font is used for both <a class="reference internal" href="#pybricks.media.ev3dev.Image.draw_text" title="pybricks.media.ev3dev.Image.draw_text"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw_text()</span></code></a> and <a class="reference internal" href="#pybricks.media.ev3dev.Image.print" title="pybricks.media.ev3dev.Image.print"><code class="xref py py-meth docutils literal notranslate"><span class="pre">print()</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>font</strong> (<a class="reference internal" href="#pybricks.media.ev3dev.Font" title="pybricks.media.ev3dev.Font"><code class="xref py py-class docutils literal notranslate"><span class="pre">Font</span></code></a>) – The font to use.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Drawing images</p>
+<p>A copy of another image can be drawn on an image. Also consider using
+sub-images to copy part of an image.</p>
+<dl class="method">
+<dt id="pybricks.media.ev3dev.Image.draw_image">
+<code class="descname">draw_image</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>source</em>, <em>transparent=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws the <code class="docutils literal notranslate"><span class="pre">source</span></code> image on this image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>int</em>) – The x-axis value where the left side of the image will start.</li>
+<li><strong>y</strong> (<em>int</em>) – The y-axis value where the top of the image will start.</li>
+<li><strong>source</strong> (<a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><em>Image</em></a><em> or </em><em>str</em>) – The source <a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a>. If the argument is a string, then
+the <code class="docutils literal notranslate"><span class="pre">source</span></code> image is loaded from file.</li>
+<li><strong>transparent</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – The color of <code class="docutils literal notranslate"><span class="pre">image</span></code> to treat as transparent or <code class="docutils literal notranslate"><span class="pre">None</span></code> for
+no transparency.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Drawing shapes</p>
+<p>These are the methods to draw basic shapes, including points, lines,
+rectangles and circles.</p>
+<dl class="method">
+<dt id="pybricks.media.ev3dev.Image.draw_pixel">
+<code class="descname">draw_pixel</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>color=Color.BLACK</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_pixel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws a single pixel on this image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>int</em>) – The x coordinate of the pixel.</li>
+<li><strong>y</strong> (<em>int</em>) – The y coordinate of the pixel.</li>
+<li><strong>color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – The color of the pixel.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.media.ev3dev.Image.draw_line">
+<code class="descname">draw_line</code><span class="sig-paren">(</span><em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em>, <em>width=1</em>, <em>color=Color.BLACK</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws a line on this image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x1</strong> (<em>int</em>) – The x coordinate of the starting point of the line.</li>
+<li><strong>y1</strong> (<em>int</em>) – The y coordinate of the starting point of the line.</li>
+<li><strong>x2</strong> (<em>int</em>) – The x coordinate of the ending point of the line.</li>
+<li><strong>y2</strong> (<em>int</em>) – The y coordinate of the ending point of the line.</li>
+<li><strong>width</strong> (<em>int</em>) – The width of the line in pixels.</li>
+<li><strong>color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – The color of the line.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.media.ev3dev.Image.draw_box">
+<code class="descname">draw_box</code><span class="sig-paren">(</span><em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em>, <em>r=0</em>, <em>fill=False</em>, <em>color=Color.BLACK</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws a box on this image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x1</strong> (<em>int</em>) – The x coordinate of the left side of the box.</li>
+<li><strong>y1</strong> (<em>int</em>) – The y coordinate of the top of the box.</li>
+<li><strong>x2</strong> (<em>int</em>) – The x coordinate of the right side of the box.</li>
+<li><strong>y2</strong> (<em>int</em>) – The y coordinate of the bottom of the box.</li>
+<li><strong>r</strong> (<em>int</em>) – The radius of the corners of the box.</li>
+<li><strong>fill</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the box will be filled with <code class="docutils literal notranslate"><span class="pre">color</span></code>,
+otherwise only the outline of the box will be drawn.</li>
+<li><strong>color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – The color of the box.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.media.ev3dev.Image.draw_circle">
+<code class="descname">draw_circle</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>r</em>, <em>fill=False</em>, <em>color=Color.BLACK</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.draw_circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws a circle on this image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>int</em>) – The x coordinate of the center of the circle.</li>
+<li><strong>y</strong> (<em>int</em>) – The y coordinate of the center of the circle.</li>
+<li><strong>r</strong> (<em>int</em>) – The radius of the circle.</li>
+<li><strong>fill</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the circle will be filled with
+<code class="docutils literal notranslate"><span class="pre">color</span></code>, otherwise only the circumference will be drawn.</li>
+<li><strong>color</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><em>Color</em></a>) – The color of the circle.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Image properties</p>
+<dl class="attribute">
+<dt id="pybricks.media.ev3dev.Image.width">
+<code class="descname">width</code><a class="headerlink" href="#pybricks.media.ev3dev.Image.width" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the width of this image in pixels.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pybricks.media.ev3dev.Image.height">
+<code class="descname">height</code><a class="headerlink" href="#pybricks.media.ev3dev.Image.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the height of this image in pixels.</p>
+</dd></dl>
+
+<p class="rubric">Replacing the entire image</p>
+<dl class="method">
+<dt id="pybricks.media.ev3dev.Image.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears this image. All pixels on this image will be set to
+<a class="reference internal" href="parameters.html#pybricks.parameters.Color.WHITE" title="pybricks.parameters.Color.WHITE"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Color.WHITE</span></code></a>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.media.ev3dev.Image.load_image">
+<code class="descname">load_image</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.load_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears this image, then draws the <code class="docutils literal notranslate"><span class="pre">source</span></code> image centered in
+this image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>source</strong> (<a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><em>Image</em></a><em> or </em><em>str</em>) – The source <a class="reference internal" href="#pybricks.media.ev3dev.Image" title="pybricks.media.ev3dev.Image"><code class="xref py py-class docutils literal notranslate"><span class="pre">Image</span></code></a>. If the argument is a string, then
+the <code class="docutils literal notranslate"><span class="pre">source</span></code> image is loaded from file.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Saving the image</p>
+<dl class="method">
+<dt id="pybricks.media.ev3dev.Image.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.media.ev3dev.Image.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves this image as a <code class="docutils literal notranslate"><span class="pre">.png</span></code> file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>filename</strong> (<em>str</em>) – The path to the file to be saved.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code> – <code class="docutils literal notranslate"><span class="pre">filename</span></code> is not a string.</li>
+<li><code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code> – There was a problem saving the file.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="messaging.html" class="btn btn-neutral float-right" title="messaging – Messaging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="robotics.html" class="btn btn-neutral float-left" title="robotics – Robotics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

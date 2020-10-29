@@ -1,0 +1,24 @@
+
+table {
+    width: 100%;
+}
+
+td {
+    padding: 2.5% 0%;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.title {
+    font-size: xx-large;
+    padding: 1% 0%;
+}
+
+.title a {
+    color: var(--vscode-editor-foreground);
+    text-decoration: none;
+}

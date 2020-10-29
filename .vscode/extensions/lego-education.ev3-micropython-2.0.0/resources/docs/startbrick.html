@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using the EV3 Brick &mdash; ev3-micropython 2.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'2.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Creating and running programs" href="startrun.html" />
+    <link rel="prev" title="Installation" href="startinstall.html" />
+    <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="startinstall.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using the EV3 Brick</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#turning-the-ev3-brick-on-and-off">Turning the EV3 Brick on and off</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-motor-and-sensor-values">Viewing motor and sensor values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-a-program-without-a-computer">Running a program without a computer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#going-back-to-the-original-firmware">Going back to the original firmware</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="startrun.html">Creating and running programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startlinux.html">Accessing advanced EV3 features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startupgrade.html">Upgrading from v1.0 to v2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Pybricks Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – Programmable Hubs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – Generic I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – Parameters and Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – Timing and Data logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – Sounds and Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – Messaging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Engineering Extras</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="signaltypes.html">Signals and Units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motors.html">More about Motors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Robot Educator Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_basic.html">Basic Movement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_ultrasonic.html">Obstacle Avoidance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_line.html">Line Following</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Core Set Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/color_sorter.html">Color Sorter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_arm.html">Robot Arm H25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/puppy.html">Puppy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/gyro_boy.html">Gyro Boy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Expansion Set Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/elephant.html">Elephant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/stair_climber.html">Stair Climber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/tank_bot.html">Tank Bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/znap.html">Znap</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ev3-micropython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Using the EV3 Brick</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/startbrick.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="using-the-ev3-brick">
+<h1>Using the EV3 Brick<a class="headerlink" href="#using-the-ev3-brick" title="Permalink to this headline">¶</a></h1>
+<p>Make sure the EV3 Brick is turned off. Insert the microSD card you prepared
+into the microSD card slot on the EV3 Brick, as shown in <a class="reference internal" href="#fig-sd"><span class="std std-numref">Figure 4</span></a>.</p>
+<div class="figure align-center" id="id1">
+<span id="fig-sd"></span><img alt="sd" src="_images/sd_label.png" style="width: 75%;" />
+<p class="caption"><span class="caption-number">Figure 4 </span><span class="caption-text">Inserting the flashed microSD card into the EV3 Brick</span></p>
+</div>
+<div class="section" id="turning-the-ev3-brick-on-and-off">
+<h2>Turning the EV3 Brick on and off<a class="headerlink" href="#turning-the-ev3-brick-on-and-off" title="Permalink to this headline">¶</a></h2>
+<p>Turn on the EV3 Brick by pressing the dark gray center button.</p>
+<p>The boot process may take several minutes. While booting, the EV3 Brick status
+light turns orange and blinks intermittently, and you’ll see a lot of text on
+the EV3 screen. The EV3 Brick is ready for use when the status light turns
+green.</p>
+<p>To turn the EV3 Brick off, open the shutdown menu with the back button, and
+then select <em>Power Off</em> using the center button, as shown
+in <a class="reference internal" href="#fig-onoff"><span class="std std-numref">Figure 5</span></a>.</p>
+<div class="figure align-center" id="id2">
+<span id="fig-onoff"></span><img alt="onoff" src="_images/onoff_label.png" style="width: 65%;" />
+<p class="caption"><span class="caption-number">Figure 5 </span><span class="caption-text">Turning the EV3 Brick off</span></p>
+</div>
+</div>
+<div class="section" id="viewing-motor-and-sensor-values">
+<h2>Viewing motor and sensor values<a class="headerlink" href="#viewing-motor-and-sensor-values" title="Permalink to this headline">¶</a></h2>
+<p>When you’re not running a program, you can view motor and sensor values using
+the device browser, as shown in <a class="reference internal" href="#fig-devicebrowser"><span class="std std-numref">Figure 6</span></a>.</p>
+<div class="figure align-center" id="id3">
+<span id="fig-devicebrowser"></span><img alt="devicebrowser" src="_images/devicebrowser_label.png" style="width: 100%;" />
+<p class="caption"><span class="caption-number">Figure 6 </span><span class="caption-text">Viewing motor and sensor values</span></p>
+</div>
+</div>
+<div class="section" id="running-a-program-without-a-computer">
+<h2>Running a program without a computer<a class="headerlink" href="#running-a-program-without-a-computer" title="Permalink to this headline">¶</a></h2>
+<p>You can run previously downloaded programs directly from the EV3 Brick.</p>
+<p>To do so, find the program using the <em>file browser</em> on the EV3 screen and press
+the center button key to start the program as shown in <a class="reference internal" href="#fig-manualrun"><span class="std std-numref">Figure 7</span></a>.</p>
+<div class="figure align-center" id="id4">
+<span id="fig-manualrun"></span><img alt="manualrun" src="_images/manualrun_label.png" style="width: 100%;" />
+<p class="caption"><span class="caption-number">Figure 7 </span><span class="caption-text">Starting a program using the buttons on the EV3 Brick</span></p>
+</div>
+</div>
+<div class="section" id="going-back-to-the-original-firmware">
+<h2>Going back to the original firmware<a class="headerlink" href="#going-back-to-the-original-firmware" title="Permalink to this headline">¶</a></h2>
+<p>You can go back to the LEGO® firmware and your LEGO programs at any time. To
+do so:</p>
+<ol class="arabic simple">
+<li>Turn the EV3 Brick off as shown above.</li>
+<li>Wait for the screen and brick status light to turn off.</li>
+<li>Remove the microSD card.</li>
+<li>Turn the EV3 on.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="startrun.html" class="btn btn-neutral float-right" title="Creating and running programs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="startinstall.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

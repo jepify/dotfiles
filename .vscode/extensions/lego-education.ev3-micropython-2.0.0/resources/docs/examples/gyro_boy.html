@@ -1,0 +1,600 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Gyro Boy &mdash; ev3-micropython 2.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'2.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Elephant" href="elephant.html" />
+    <link rel="prev" title="Puppy" href="puppy.html" />
+    <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../startinstall.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../startbrick.html">Using the EV3 Brick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../startrun.html">Creating and running programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../startlinux.html">Accessing advanced EV3 features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../startupgrade.html">Upgrading from v1.0 to v2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Pybricks Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – Programmable Hubs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – Generic I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – Parameters and Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – Timing and Data logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – Sounds and Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – Messaging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Engineering Extras</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../signaltypes.html">Signals and Units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../motors.html">More about Motors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Robot Educator Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="robot_educator_basic.html">Basic Movement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robot_educator_ultrasonic.html">Obstacle Avoidance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robot_educator_line.html">Line Following</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Core Set Programs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="color_sorter.html">Color Sorter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robot_arm.html">Robot Arm H25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="puppy.html">Puppy</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Gyro Boy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Expansion Set Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="elephant.html">Elephant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stair_climber.html">Stair Climber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tank_bot.html">Tank Bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="znap.html">Znap</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ev3-micropython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Gyro Boy</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/examples/gyro_boy.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gyro-boy">
+<h1>Gyro Boy<a class="headerlink" href="#gyro-boy" title="Permalink to this headline">¶</a></h1>
+<p>This program makes Gyro Boy balance on its two wheels using the
+<a class="reference internal" href="../ev3devices.html#pybricks.ev3devices.GyroSensor" title="pybricks.ev3devices.GyroSensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">GyroSensor</span></code></a>. The duty cycle of the
+motors is continuously adjusted as a function of the gyro angle, the gyro
+speed, the motor angles, and the motor speeds, in order to maintain balance.</p>
+<p>This program also uses a
+Python generator function (a function that uses yield instead of return) as
+a coroutine. Coroutines are a form of cooperative multitasking that allows the
+robot perform multiple tasks at the same time. This lets you drive it around
+while it is busy balancing.</p>
+<p class="rubric">Building instructions</p>
+<p>Click <a class="reference external" href="https://education.lego.com/en-us/support/mindstorms-ev3/building-instructions#building-core">here</a> to find all building instructions for the Core Set Models, or use
+<a class="reference external" href="https://le-www-live-s.legocdn.com/sc/media/lessons/mindstorms-ev3/building-instructions/ev3-model-core-set-gyro-boy-f8a14d8e3d0e63fa23b87f798bf197f4.pdf">this link</a> to go to Gyro Boy directly.</p>
+<div class="figure align-center" id="id1">
+<span id="fig-gyro-boy"></span><img alt="../_images/gyro_boy.jpg" src="../_images/gyro_boy.jpg" style="width: 80%;" />
+<p class="caption"><span class="caption-number">Figure 30 </span><span class="caption-text">Gyro Boy</span></p>
+</div>
+<p class="rubric">Example program</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env pybricks-micropython</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Example LEGO® MINDSTORMS® EV3 Gyro Boy Program</span>
+<span class="sd">----------------------------------------------</span>
+
+<span class="sd">This program requires LEGO® EV3 MicroPython v2.0.</span>
+<span class="sd">Download: https://education.lego.com/en-us/support/mindstorms-ev3/python-for-ev3</span>
+
+<span class="sd">Building instructions can be found at:</span>
+<span class="sd">https://education.lego.com/en-us/support/mindstorms-ev3/building-instructions#building-core</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">ucollections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="kn">import</span> <span class="nn">urandom</span>
+
+<span class="kn">from</span> <span class="nn">pybricks.hubs</span> <span class="kn">import</span> <span class="n">EV3Brick</span>
+<span class="kn">from</span> <span class="nn">pybricks.ev3devices</span> <span class="kn">import</span> <span class="n">Motor</span><span class="p">,</span> <span class="n">UltrasonicSensor</span><span class="p">,</span> <span class="n">ColorSensor</span><span class="p">,</span> <span class="n">GyroSensor</span>
+<span class="kn">from</span> <span class="nn">pybricks.parameters</span> <span class="kn">import</span> <span class="n">Port</span><span class="p">,</span> <span class="n">Color</span><span class="p">,</span> <span class="n">ImageFile</span><span class="p">,</span> <span class="n">SoundFile</span>
+<span class="kn">from</span> <span class="nn">pybricks.tools</span> <span class="kn">import</span> <span class="n">wait</span><span class="p">,</span> <span class="n">StopWatch</span>
+
+<span class="c1"># Initialize the EV3 brick.</span>
+<span class="n">ev3</span> <span class="o">=</span> <span class="n">EV3Brick</span><span class="p">()</span>
+
+<span class="c1"># Initialize the motors connected to the drive wheels.</span>
+<span class="n">left_motor</span> <span class="o">=</span> <span class="n">Motor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">D</span><span class="p">)</span>
+<span class="n">right_motor</span> <span class="o">=</span> <span class="n">Motor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># Initialize the motor connected to the arms.</span>
+<span class="n">arm_motor</span> <span class="o">=</span> <span class="n">Motor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">C</span><span class="p">)</span>
+
+<span class="c1"># Initialize the Color Sensor. It is used to detect the colors that command</span>
+<span class="c1"># which way the robot should move.</span>
+<span class="n">color_sensor</span> <span class="o">=</span> <span class="n">ColorSensor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">S1</span><span class="p">)</span>
+
+<span class="c1"># Initialize the gyro sensor. It is used to provide feedback for balancing the</span>
+<span class="c1"># robot.</span>
+<span class="n">gyro_sensor</span> <span class="o">=</span> <span class="n">GyroSensor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">S2</span><span class="p">)</span>
+
+<span class="c1"># Initialize the ultrasonic sensor. It is used to detect when the robot gets</span>
+<span class="c1"># too close to an obstruction.</span>
+<span class="n">ultrasonic_sensor</span> <span class="o">=</span> <span class="n">UltrasonicSensor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">S4</span><span class="p">)</span>
+
+<span class="c1"># Initialize the timers.</span>
+<span class="n">fall_timer</span> <span class="o">=</span> <span class="n">StopWatch</span><span class="p">()</span>
+<span class="n">single_loop_timer</span> <span class="o">=</span> <span class="n">StopWatch</span><span class="p">()</span>
+<span class="n">control_loop_timer</span> <span class="o">=</span> <span class="n">StopWatch</span><span class="p">()</span>
+<span class="n">action_timer</span> <span class="o">=</span> <span class="n">StopWatch</span><span class="p">()</span>
+
+
+<span class="c1"># The following (UPPERCASE names) are constants that control how the program</span>
+<span class="c1"># behaves.</span>
+
+<span class="n">GYRO_CALIBRATION_LOOP_COUNT</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">GYRO_OFFSET_FACTOR</span> <span class="o">=</span> <span class="mf">0.0005</span>
+<span class="n">TARGET_LOOP_PERIOD</span> <span class="o">=</span> <span class="mi">15</span>  <span class="c1"># ms</span>
+<span class="n">ARM_MOTOR_SPEED</span> <span class="o">=</span> <span class="mi">600</span>  <span class="c1"># deg/s</span>
+
+<span class="c1"># Actions will be used to change which way the robot drives.</span>
+<span class="n">Action</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Action &#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;drive_speed&#39;</span><span class="p">,</span> <span class="s1">&#39;steering&#39;</span><span class="p">])</span>
+
+<span class="c1"># These are the pre-defined actions</span>
+<span class="n">STOP</span> <span class="o">=</span> <span class="n">Action</span><span class="p">(</span><span class="n">drive_speed</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">steering</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">FORWARD_FAST</span> <span class="o">=</span> <span class="n">Action</span><span class="p">(</span><span class="n">drive_speed</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">steering</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">FORWARD_SLOW</span> <span class="o">=</span> <span class="n">Action</span><span class="p">(</span><span class="n">drive_speed</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">steering</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">BACKWARD_FAST</span> <span class="o">=</span> <span class="n">Action</span><span class="p">(</span><span class="n">drive_speed</span><span class="o">=-</span><span class="mi">75</span><span class="p">,</span> <span class="n">steering</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">BACKWARD_SLOW</span> <span class="o">=</span> <span class="n">Action</span><span class="p">(</span><span class="n">drive_speed</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">steering</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">TURN_RIGHT</span> <span class="o">=</span> <span class="n">Action</span><span class="p">(</span><span class="n">drive_speed</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">steering</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span>
+<span class="n">TURN_LEFT</span> <span class="o">=</span> <span class="n">Action</span><span class="p">(</span><span class="n">drive_speed</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">steering</span><span class="o">=-</span><span class="mi">70</span><span class="p">)</span>
+
+<span class="c1"># The colors that the color sensor can detect are mapped to actions that the</span>
+<span class="c1"># robot can perform.</span>
+<span class="n">ACTION_MAP</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">:</span> <span class="n">STOP</span><span class="p">,</span>
+    <span class="n">Color</span><span class="o">.</span><span class="n">GREEN</span><span class="p">:</span> <span class="n">FORWARD_FAST</span><span class="p">,</span>
+    <span class="n">Color</span><span class="o">.</span><span class="n">BLUE</span><span class="p">:</span> <span class="n">TURN_RIGHT</span><span class="p">,</span>
+    <span class="n">Color</span><span class="o">.</span><span class="n">YELLOW</span><span class="p">:</span> <span class="n">TURN_LEFT</span><span class="p">,</span>
+    <span class="n">Color</span><span class="o">.</span><span class="n">WHITE</span><span class="p">:</span> <span class="n">BACKWARD_FAST</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<span class="c1"># This function monitors the color sensor and ultrasonic sensor.</span>
+<span class="c1">#</span>
+<span class="c1"># It is important that no blocking calls are made in this function, otherwise</span>
+<span class="c1"># it will affect the control loop time in the main program. Instead, we yield</span>
+<span class="c1"># to the control loop while we are waiting for a certain thing to happen like</span>
+<span class="c1"># this:</span>
+<span class="c1">#</span>
+<span class="c1">#     while not condition:</span>
+<span class="c1">#         yield</span>
+<span class="c1">#</span>
+<span class="c1"># We also use yield to update the drive speed and steering values in the main</span>
+<span class="c1"># control loop:</span>
+<span class="c1">#</span>
+<span class="c1">#     yield action</span>
+<span class="c1">#</span>
+<span class="k">def</span> <span class="nf">update_action</span><span class="p">():</span>
+    <span class="n">arm_motor</span><span class="o">.</span><span class="n">reset_angle</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">action_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+    <span class="c1"># Drive forward for 4 seconds to leave stand, then stop.</span>
+    <span class="k">yield</span> <span class="n">FORWARD_SLOW</span>
+    <span class="k">while</span> <span class="n">action_timer</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">4000</span><span class="p">:</span>
+        <span class="k">yield</span>
+
+    <span class="n">action</span> <span class="o">=</span> <span class="n">STOP</span>
+    <span class="k">yield</span> <span class="n">action</span>
+
+    <span class="c1"># Start checking sensors on arms. When specific conditions are sensed,</span>
+    <span class="c1"># different actions will be performed.</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="c1"># First, we check the color sensor. The detected color is looked up in</span>
+        <span class="c1"># the action map.</span>
+        <span class="n">new_action</span> <span class="o">=</span> <span class="n">ACTION_MAP</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">color_sensor</span><span class="o">.</span><span class="n">color</span><span class="p">())</span>
+
+        <span class="c1"># If the color was found, beep for 0.1 seconds and then change the</span>
+        <span class="c1"># action depending on which color was detected.</span>
+        <span class="k">if</span> <span class="n">new_action</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">action_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+            <span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">beep</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">while</span> <span class="n">action_timer</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+                <span class="k">yield</span>
+            <span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">beep</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="c1"># If the new action involves steering, combine the new steering</span>
+            <span class="c1"># with the old drive speed. Otherwise, use the entire new action.</span>
+            <span class="k">if</span> <span class="n">new_action</span><span class="o">.</span><span class="n">steering</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">action</span> <span class="o">=</span> <span class="n">Action</span><span class="p">(</span><span class="n">drive_speed</span><span class="o">=</span><span class="n">action</span><span class="o">.</span><span class="n">drive_speed</span><span class="p">,</span>
+                                <span class="n">steering</span><span class="o">=</span><span class="n">new_action</span><span class="o">.</span><span class="n">steering</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">action</span> <span class="o">=</span> <span class="n">new_action</span>
+            <span class="k">yield</span> <span class="n">action</span>
+
+        <span class="c1"># If the measured distance of the ultrasonic sensor is less than 250</span>
+        <span class="c1"># millimeters, then back up slowly.</span>
+        <span class="k">if</span> <span class="n">ultrasonic_sensor</span><span class="o">.</span><span class="n">distance</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">250</span><span class="p">:</span>
+            <span class="c1"># Back up slowly while wiggling the arms back and forth.</span>
+            <span class="k">yield</span> <span class="n">BACKWARD_SLOW</span>
+
+            <span class="n">arm_motor</span><span class="o">.</span><span class="n">run_angle</span><span class="p">(</span><span class="n">ARM_MOTOR_SPEED</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="k">while</span> <span class="ow">not</span> <span class="n">arm_motor</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">done</span><span class="p">():</span>
+                <span class="k">yield</span>
+            <span class="n">arm_motor</span><span class="o">.</span><span class="n">run_angle</span><span class="p">(</span><span class="n">ARM_MOTOR_SPEED</span><span class="p">,</span> <span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="k">while</span> <span class="ow">not</span> <span class="n">arm_motor</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">done</span><span class="p">():</span>
+                <span class="k">yield</span>
+            <span class="n">arm_motor</span><span class="o">.</span><span class="n">run_angle</span><span class="p">(</span><span class="n">ARM_MOTOR_SPEED</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="k">while</span> <span class="ow">not</span> <span class="n">arm_motor</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">done</span><span class="p">():</span>
+                <span class="k">yield</span>
+
+            <span class="c1"># Randomly turn left or right for 4 seconds while still backing</span>
+            <span class="c1"># up slowly.</span>
+            <span class="n">turn</span> <span class="o">=</span> <span class="n">urandom</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="n">TURN_LEFT</span><span class="p">,</span> <span class="n">TURN_RIGHT</span><span class="p">])</span>
+            <span class="k">yield</span> <span class="n">Action</span><span class="p">(</span><span class="n">drive_speed</span><span class="o">=</span><span class="n">BACKWARD_SLOW</span><span class="o">.</span><span class="n">drive_speed</span><span class="p">,</span>
+                         <span class="n">steering</span><span class="o">=</span><span class="n">turn</span><span class="o">.</span><span class="n">steering</span><span class="p">)</span>
+            <span class="n">action_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+            <span class="k">while</span> <span class="n">action_timer</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">4000</span><span class="p">:</span>
+                <span class="k">yield</span>
+
+            <span class="c1"># Beep and then restore the previous action from before the</span>
+            <span class="c1"># ultrasonic sensor detected an obstruction.</span>
+            <span class="n">action_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+            <span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">beep</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">while</span> <span class="n">action_timer</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+                <span class="k">yield</span>
+            <span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">beep</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="k">yield</span> <span class="n">action</span>
+
+        <span class="c1"># This adds a small delay since we don&#39;t need to read these sensors</span>
+        <span class="c1"># continuously. Reading once every 100 milliseconds is fast enough.</span>
+        <span class="n">action_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+        <span class="k">while</span> <span class="n">action_timer</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+            <span class="k">yield</span>
+
+
+<span class="c1"># If we fall over in the middle of an action, the arm motors could be moving or</span>
+<span class="c1"># the speaker could be beeping, so we need to stop both of those.</span>
+<span class="k">def</span> <span class="nf">stop_action</span><span class="p">():</span>
+    <span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">beep</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">arm_motor</span><span class="o">.</span><span class="n">run_target</span><span class="p">(</span><span class="n">ARM_MOTOR_SPEED</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Sleeping eyes and light off let us know that the robot is waiting for</span>
+    <span class="c1"># any movement to stop before the program can continue.</span>
+    <span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">load_image</span><span class="p">(</span><span class="n">ImageFile</span><span class="o">.</span><span class="n">SLEEPING</span><span class="p">)</span>
+    <span class="n">ev3</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+
+    <span class="c1"># Reset the sensors and variables.</span>
+    <span class="n">left_motor</span><span class="o">.</span><span class="n">reset_angle</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">right_motor</span><span class="o">.</span><span class="n">reset_angle</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">fall_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+    <span class="n">motor_position_sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">wheel_angle</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">motor_position_change</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">drive_speed</span><span class="p">,</span> <span class="n">steering</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="n">control_loop_count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">robot_body_angle</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.25</span>
+
+    <span class="c1"># Since update_action() is a generator (it uses &quot;yield&quot; instead of</span>
+    <span class="c1"># &quot;return&quot;) this doesn&#39;t actually run update_action() right now but</span>
+    <span class="c1"># rather prepares it for use later.</span>
+    <span class="n">action_task</span> <span class="o">=</span> <span class="n">update_action</span><span class="p">()</span>
+
+    <span class="c1"># Calibrate the gyro offset. This makes sure that the robot is perfectly</span>
+    <span class="c1"># still by making sure that the measured rate does not fluctuate more than</span>
+    <span class="c1"># 2 deg/s. Gyro drift can cause the rate to be non-zero even when the robot</span>
+    <span class="c1"># is not moving, so we save that value for use later.</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">gyro_minimum_rate</span><span class="p">,</span> <span class="n">gyro_maximum_rate</span> <span class="o">=</span> <span class="mi">440</span><span class="p">,</span> <span class="o">-</span><span class="mi">440</span>
+        <span class="n">gyro_sum</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">GYRO_CALIBRATION_LOOP_COUNT</span><span class="p">):</span>
+            <span class="n">gyro_sensor_value</span> <span class="o">=</span> <span class="n">gyro_sensor</span><span class="o">.</span><span class="n">speed</span><span class="p">()</span>
+            <span class="n">gyro_sum</span> <span class="o">+=</span> <span class="n">gyro_sensor_value</span>
+            <span class="k">if</span> <span class="n">gyro_sensor_value</span> <span class="o">&gt;</span> <span class="n">gyro_maximum_rate</span><span class="p">:</span>
+                <span class="n">gyro_maximum_rate</span> <span class="o">=</span> <span class="n">gyro_sensor_value</span>
+            <span class="k">if</span> <span class="n">gyro_sensor_value</span> <span class="o">&lt;</span> <span class="n">gyro_minimum_rate</span><span class="p">:</span>
+                <span class="n">gyro_minimum_rate</span> <span class="o">=</span> <span class="n">gyro_sensor_value</span>
+            <span class="n">wait</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">gyro_maximum_rate</span> <span class="o">-</span> <span class="n">gyro_minimum_rate</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="n">gyro_offset</span> <span class="o">=</span> <span class="n">gyro_sum</span> <span class="o">/</span> <span class="n">GYRO_CALIBRATION_LOOP_COUNT</span>
+
+    <span class="c1"># Awake eyes and green light let us know that the robot is ready to go!</span>
+    <span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">SPEED_UP</span><span class="p">)</span>
+    <span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">load_image</span><span class="p">(</span><span class="n">ImageFile</span><span class="o">.</span><span class="n">AWAKE</span><span class="p">)</span>
+    <span class="n">ev3</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">GREEN</span><span class="p">)</span>
+
+    <span class="c1"># Main control loop for balancing the robot.</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="c1"># This timer measures how long a single loop takes. This will be used</span>
+        <span class="c1"># to help keep the loop time consistent, even when different actions</span>
+        <span class="c1"># are happening.</span>
+        <span class="n">single_loop_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+        <span class="c1"># This calculates the average control loop period. This is used in the</span>
+        <span class="c1"># control feedback calculation instead of the single loop time to</span>
+        <span class="c1"># filter out random fluctuations.</span>
+        <span class="k">if</span> <span class="n">control_loop_count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># The first time through the loop, we need to assign a value to</span>
+            <span class="c1"># avoid dividing by zero later.</span>
+            <span class="n">average_control_loop_period</span> <span class="o">=</span> <span class="n">TARGET_LOOP_PERIOD</span> <span class="o">/</span> <span class="mi">1000</span>
+            <span class="n">control_loop_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">average_control_loop_period</span> <span class="o">=</span> <span class="p">(</span><span class="n">control_loop_timer</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">/</span>
+                                           <span class="n">control_loop_count</span><span class="p">)</span>
+        <span class="n">control_loop_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="c1"># calculate robot body angle and speed</span>
+        <span class="n">gyro_sensor_value</span> <span class="o">=</span> <span class="n">gyro_sensor</span><span class="o">.</span><span class="n">speed</span><span class="p">()</span>
+        <span class="n">gyro_offset</span> <span class="o">*=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">GYRO_OFFSET_FACTOR</span><span class="p">)</span>
+        <span class="n">gyro_offset</span> <span class="o">+=</span> <span class="n">GYRO_OFFSET_FACTOR</span> <span class="o">*</span> <span class="n">gyro_sensor_value</span>
+        <span class="n">robot_body_rate</span> <span class="o">=</span> <span class="n">gyro_sensor_value</span> <span class="o">-</span> <span class="n">gyro_offset</span>
+        <span class="n">robot_body_angle</span> <span class="o">+=</span> <span class="n">robot_body_rate</span> <span class="o">*</span> <span class="n">average_control_loop_period</span>
+
+        <span class="c1"># calculate wheel angle and speed</span>
+        <span class="n">left_motor_angle</span> <span class="o">=</span> <span class="n">left_motor</span><span class="o">.</span><span class="n">angle</span><span class="p">()</span>
+        <span class="n">right_motor_angle</span> <span class="o">=</span> <span class="n">right_motor</span><span class="o">.</span><span class="n">angle</span><span class="p">()</span>
+        <span class="n">previous_motor_sum</span> <span class="o">=</span> <span class="n">motor_position_sum</span>
+        <span class="n">motor_position_sum</span> <span class="o">=</span> <span class="n">left_motor_angle</span> <span class="o">+</span> <span class="n">right_motor_angle</span>
+        <span class="n">change</span> <span class="o">=</span> <span class="n">motor_position_sum</span> <span class="o">-</span> <span class="n">previous_motor_sum</span>
+        <span class="n">motor_position_change</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">change</span><span class="p">)</span>
+        <span class="k">del</span> <span class="n">motor_position_change</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">wheel_angle</span> <span class="o">+=</span> <span class="n">change</span> <span class="o">-</span> <span class="n">drive_speed</span> <span class="o">*</span> <span class="n">average_control_loop_period</span>
+        <span class="n">wheel_rate</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">motor_position_change</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">/</span> <span class="n">average_control_loop_period</span>
+
+        <span class="c1"># This is the main control feedback calculation.</span>
+        <span class="n">output_power</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.01</span> <span class="o">*</span> <span class="n">drive_speed</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mf">0.8</span> <span class="o">*</span> <span class="n">robot_body_rate</span> <span class="o">+</span>
+                                                <span class="mi">15</span> <span class="o">*</span> <span class="n">robot_body_angle</span> <span class="o">+</span>
+                                                <span class="mf">0.08</span> <span class="o">*</span> <span class="n">wheel_rate</span> <span class="o">+</span>
+                                                <span class="mf">0.12</span> <span class="o">*</span> <span class="n">wheel_angle</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">output_power</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+            <span class="n">output_power</span> <span class="o">=</span> <span class="mi">100</span>
+        <span class="k">if</span> <span class="n">output_power</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">100</span><span class="p">:</span>
+            <span class="n">output_power</span> <span class="o">=</span> <span class="o">-</span><span class="mi">100</span>
+
+        <span class="c1"># Drive the motors.</span>
+        <span class="n">left_motor</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="n">output_power</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">steering</span><span class="p">)</span>
+        <span class="n">right_motor</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="n">output_power</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">steering</span><span class="p">)</span>
+
+        <span class="c1"># Check if robot fell down. If the output speed is +/-100% for more</span>
+        <span class="c1"># than one second, we know that we are no longer balancing properly.</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">output_power</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+            <span class="n">fall_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">fall_timer</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1000</span><span class="p">:</span>
+            <span class="k">break</span>
+
+        <span class="c1"># This runs update_action() until the next &quot;yield&quot; statement.</span>
+        <span class="n">action</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">action_task</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">action</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">drive_speed</span><span class="p">,</span> <span class="n">steering</span> <span class="o">=</span> <span class="n">action</span>
+
+        <span class="c1"># Make sure loop time is at least TARGET_LOOP_PERIOD. The output power</span>
+        <span class="c1"># calculation above depends on having a certain amount of time in each</span>
+        <span class="c1"># loop.</span>
+        <span class="n">wait</span><span class="p">(</span><span class="n">TARGET_LOOP_PERIOD</span> <span class="o">-</span> <span class="n">single_loop_timer</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+
+    <span class="c1"># Handle falling over. If we get to this point in the program, it means</span>
+    <span class="c1"># that the robot fell over.</span>
+
+    <span class="c1"># Stop all of the motors.</span>
+    <span class="n">stop_action</span><span class="p">()</span>
+    <span class="n">left_motor</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+    <span class="n">right_motor</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+    <span class="c1"># Knocked out eyes and red light let us know that the robot lost its</span>
+    <span class="c1"># balance.</span>
+    <span class="n">ev3</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">)</span>
+    <span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">load_image</span><span class="p">(</span><span class="n">ImageFile</span><span class="o">.</span><span class="n">KNOCKED_OUT</span><span class="p">)</span>
+    <span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">SPEED_DOWN</span><span class="p">)</span>
+
+    <span class="c1"># Wait for a few seconds before trying to balance again.</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">3000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="elephant.html" class="btn btn-neutral float-right" title="Elephant" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="puppy.html" class="btn btn-neutral float-left" title="Puppy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

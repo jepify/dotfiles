@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Stair Climber &mdash; ev3-micropython 2.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'2.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tank Bot" href="tank_bot.html" />
+    <link rel="prev" title="Elephant" href="elephant.html" />
+    <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../startinstall.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../startbrick.html">Using the EV3 Brick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../startrun.html">Creating and running programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../startlinux.html">Accessing advanced EV3 features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../startupgrade.html">Upgrading from v1.0 to v2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Pybricks Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – Programmable Hubs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – Generic I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – Parameters and Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – Timing and Data logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – Sounds and Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – Messaging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Engineering Extras</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../signaltypes.html">Signals and Units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../motors.html">More about Motors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Robot Educator Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="robot_educator_basic.html">Basic Movement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robot_educator_ultrasonic.html">Obstacle Avoidance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robot_educator_line.html">Line Following</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Core Set Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="color_sorter.html">Color Sorter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robot_arm.html">Robot Arm H25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="puppy.html">Puppy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gyro_boy.html">Gyro Boy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Expansion Set Programs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="elephant.html">Elephant</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Stair Climber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tank_bot.html">Tank Bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="znap.html">Znap</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ev3-micropython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Stair Climber</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/examples/stair_climber.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="stair-climber">
+<h1>Stair Climber<a class="headerlink" href="#stair-climber" title="Permalink to this headline">¶</a></h1>
+<p>This example project makes the Stair Climber climb a number of steps that you
+select using the EV3 Brick buttons. For more details, be sure to check out the
+comments in the program below.</p>
+<p class="rubric">Building instructions</p>
+<p>Click <a class="reference external" href="https://education.lego.com/en-us/support/mindstorms-ev3/building-instructions#building-expansion">here</a> to find all building instructions for the Expansion Set Models,
+or use <a class="reference external" href="https://le-www-live-s.legocdn.com/sc/media/lessons/mindstorms-ev3/building-instructions/model-expansion-set/ev3-model-expansion-set-stair-climber-8f4d9f19b87fa2e37e28aebe2b24486b.pdf">this link</a> to go to the Stair Climber directly.</p>
+<div class="figure align-center" id="id1">
+<span id="fig-stair-climber"></span><img alt="../_images/stair_climber.jpg" src="../_images/stair_climber.jpg" style="width: 80%;" />
+<p class="caption"><span class="caption-number">Figure 32 </span><span class="caption-text">Puppy</span></p>
+</div>
+<p class="rubric">Example program</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env pybricks-micropython</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Example LEGO® MINDSTORMS® EV3 Stair Climber Program</span>
+<span class="sd">---------------------------------------------------</span>
+
+<span class="sd">This program requires LEGO® EV3 MicroPython v2.0.</span>
+<span class="sd">Download: https://education.lego.com/en-us/support/mindstorms-ev3/python-for-ev3</span>
+
+<span class="sd">Building instructions can be found at:</span>
+<span class="sd">https://education.lego.com/en-us/support/mindstorms-ev3/building-instructions#building-expansion</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">pybricks.hubs</span> <span class="kn">import</span> <span class="n">EV3Brick</span>
+<span class="kn">from</span> <span class="nn">pybricks.ev3devices</span> <span class="kn">import</span> <span class="n">Motor</span><span class="p">,</span> <span class="n">GyroSensor</span><span class="p">,</span> <span class="n">TouchSensor</span>
+<span class="kn">from</span> <span class="nn">pybricks.parameters</span> <span class="kn">import</span> <span class="n">Port</span><span class="p">,</span> <span class="n">Direction</span><span class="p">,</span> <span class="n">Button</span>
+<span class="kn">from</span> <span class="nn">pybricks.tools</span> <span class="kn">import</span> <span class="n">wait</span>
+<span class="kn">from</span> <span class="nn">pybricks.media.ev3dev</span> <span class="kn">import</span> <span class="n">Font</span><span class="p">,</span> <span class="n">SoundFile</span>
+
+<span class="c1"># Initialize the EV3 brick.</span>
+<span class="n">ev3</span> <span class="o">=</span> <span class="n">EV3Brick</span><span class="p">()</span>
+
+<span class="c1"># Configure the front motor, which drives the front wheels.  Set the</span>
+<span class="c1"># motor direction to counterclockwise, so that positive speed values</span>
+<span class="c1"># make the robot move forward.</span>
+<span class="n">front_motor</span> <span class="o">=</span> <span class="n">Motor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="n">Direction</span><span class="o">.</span><span class="n">COUNTERCLOCKWISE</span><span class="p">)</span>
+
+<span class="c1"># Configure the rear motor, which drives the rear wheels.  Set the motor</span>
+<span class="c1"># direction to counterclockwise, so that positive speed values make the</span>
+<span class="c1"># robot move forward.</span>
+<span class="n">rear_motor</span> <span class="o">=</span> <span class="n">Motor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">Direction</span><span class="o">.</span><span class="n">COUNTERCLOCKWISE</span><span class="p">)</span>
+
+<span class="c1"># Configure the lift motor, which lifts the rear structure.  It has an</span>
+<span class="c1"># 8-tooth, a 24-tooth, and a 40-tooth gear connected to it.  Set the</span>
+<span class="c1"># motor direction to counterclockwise, so that positive speed values</span>
+<span class="c1"># make the rear structure move upward.</span>
+<span class="n">lift_motor</span> <span class="o">=</span> <span class="n">Motor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">D</span><span class="p">,</span> <span class="n">Direction</span><span class="o">.</span><span class="n">COUNTERCLOCKWISE</span><span class="p">,</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">40</span><span class="p">])</span>
+
+<span class="c1"># Set up the Gyro Sensor.  It is used to measure the angle of the robot.</span>
+<span class="c1"># Keep the Gyro Sensor and EV3 steady when connecting the cable and</span>
+<span class="c1"># during start-up of the EV3.</span>
+<span class="n">gyro_sensor</span> <span class="o">=</span> <span class="n">GyroSensor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">S2</span><span class="p">)</span>
+
+<span class="c1"># Set up the Touch Sensor.  It is used to detect when the rear</span>
+<span class="c1"># structure has moved to its maximum position.</span>
+<span class="n">touch_sensor</span> <span class="o">=</span> <span class="n">TouchSensor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">S3</span><span class="p">)</span>
+
+<span class="c1"># Using a very large font</span>
+<span class="n">big_font</span> <span class="o">=</span> <span class="n">Font</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="n">big_font</span><span class="p">)</span>
+
+<span class="c1"># Initialize the rear structure.  In order to move the structure both</span>
+<span class="c1"># the rear motor and lift motor must run in sync.  First, the rear</span>
+<span class="c1"># motor moves the robot backward while the lift motor moves the rear</span>
+<span class="c1"># structure up until the Touch Sensor is pressed.  Second, the rear</span>
+<span class="c1"># motor moves the robot forward while the lift motor moves the rear</span>
+<span class="c1"># structure down for a set amount of degrees to move to its starting</span>
+<span class="c1"># position.  Finally, the lift motor resets the angle to &quot;0.&quot;  This</span>
+<span class="c1"># means that when it moves to &quot;0&quot; later on, it returns to this starting</span>
+<span class="c1"># position.</span>
+<span class="n">rear_motor</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">lift_motor</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">touch_sensor</span><span class="o">.</span><span class="n">pressed</span><span class="p">():</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">lift_motor</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">rear_motor</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">wait</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">lift_motor</span><span class="o">.</span><span class="n">run_angle</span><span class="p">(</span><span class="o">-</span><span class="mi">145</span><span class="p">,</span> <span class="mi">510</span><span class="p">)</span>
+<span class="n">rear_motor</span><span class="o">.</span><span class="n">hold</span><span class="p">()</span>
+<span class="n">lift_motor</span><span class="o">.</span><span class="n">run_angle</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">44</span><span class="p">)</span>
+<span class="n">lift_motor</span><span class="o">.</span><span class="n">reset_angle</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">gyro_sensor</span><span class="o">.</span><span class="n">reset_angle</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Initialize the steps variable to 0.</span>
+<span class="n">steps</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># This loop checks the Brick Buttons to update and display the steps</span>
+<span class="c1"># variable.  It repeats until the Center Button is pressed.</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="c1"># Display the steps variable on the screen.</span>
+    <span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">steps</span><span class="p">)</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+
+    <span class="c1"># Wait until any Brick Button is pressed.</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span><span class="n">ev3</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">pressed</span><span class="p">()):</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+    <span class="c1"># Check whether Up Button is pressed, and increase the steps</span>
+    <span class="c1"># variable by 1 if it is.</span>
+    <span class="k">if</span> <span class="n">Button</span><span class="o">.</span><span class="n">UP</span> <span class="ow">in</span> <span class="n">ev3</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">pressed</span><span class="p">():</span>
+        <span class="n">steps</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># Check whether Down Button is pressed, and decrease the steps</span>
+    <span class="c1"># variable by 1 if it is.</span>
+    <span class="k">elif</span> <span class="n">Button</span><span class="o">.</span><span class="n">DOWN</span> <span class="ow">in</span> <span class="n">ev3</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">pressed</span><span class="p">():</span>
+        <span class="n">steps</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="c1"># Make sure the steps variable is not a negative number.</span>
+        <span class="k">if</span> <span class="n">steps</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">steps</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># If the Center Button is pressed, break out of the loop.</span>
+    <span class="k">elif</span> <span class="n">Button</span><span class="o">.</span><span class="n">CENTER</span> <span class="ow">in</span> <span class="n">ev3</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">pressed</span><span class="p">():</span>
+        <span class="k">break</span>
+
+<span class="c1"># This loop climbs the stairs for the amount of steps specified in the</span>
+<span class="c1"># steps variable.  It repeats until the steps variable is 0.</span>
+<span class="k">while</span> <span class="n">steps</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+
+    <span class="c1"># Run the front and rear motors so the robot moves forward.</span>
+    <span class="n">front_motor</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">rear_motor</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+
+    <span class="c1"># Keep moving until the robot is at an angle of at least 10 degrees.</span>
+    <span class="k">while</span> <span class="n">gyro_sensor</span><span class="o">.</span><span class="n">angle</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+    <span class="c1"># Run the lift motor to move the rear structure up, while</span>
+    <span class="c1"># simultaneously running the front and rear motors.</span>
+    <span class="n">lift_motor</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">front_motor</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">rear_motor</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+
+    <span class="c1"># Keep moving the rear structure up until the Touch Sensor is</span>
+    <span class="c1"># pressed, or the robot is at an angle of less than -3 degrees.</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">touch_sensor</span><span class="o">.</span><span class="n">pressed</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">gyro_sensor</span><span class="o">.</span><span class="n">angle</span><span class="p">()</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">3</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">lift_motor</span><span class="o">.</span><span class="n">hold</span><span class="p">()</span>
+
+    <span class="c1"># Move the robot forward for some time using the front and rear</span>
+    <span class="c1"># motors.</span>
+    <span class="n">front_motor</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+    <span class="n">rear_motor</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">wait</span><span class="p">(</span><span class="mi">1300</span><span class="p">)</span>
+
+    <span class="c1"># Play a sound and pull the rear structure up so it gets back to</span>
+    <span class="c1"># its starting position.  Keep moving forward slowly by</span>
+    <span class="c1"># simultaneously running the front and rear motors.</span>
+    <span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">AIR_RELEASE</span><span class="p">)</span>
+    <span class="n">front_motor</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">rear_motor</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">lift_motor</span><span class="o">.</span><span class="n">run_target</span><span class="p">(</span><span class="mi">160</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Update the &quot;steps&quot; variable and display it on the screen.</span>
+    <span class="n">steps</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">steps</span><span class="p">)</span>
+
+<span class="c1"># Settle the robot at the top of a step and end the program.</span>
+<span class="n">front_motor</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">rear_motor</span><span class="o">.</span><span class="n">dc</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">wait</span><span class="p">(</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">front_motor</span><span class="o">.</span><span class="n">hold</span><span class="p">()</span>
+<span class="n">rear_motor</span><span class="o">.</span><span class="n">hold</span><span class="p">()</span>
+<span class="n">wait</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tank_bot.html" class="btn btn-neutral float-right" title="Tank Bot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="elephant.html" class="btn btn-neutral float-left" title="Elephant" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

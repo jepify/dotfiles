@@ -22,7 +22,6 @@ set showcmd
 set ruler   " Show row and column ruler information
 set undolevels=1000 " Number of undo levels
 set backspace=indent,eol,start  " Backspace behaviour
-set number
 set laststatus=2
 set nocompatible
 if !has('gui_running')

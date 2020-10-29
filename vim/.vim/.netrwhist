@@ -1,11 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
-let g:netrw_dirhist_9='/home/jeppek/.vim'
-let g:netrw_dirhist_8='/home/jeppek/dev/scala-cats-workshop'
-let g:netrw_dirhist_7='/home/jeppek/dotfiles/vim/.vim'
-let g:netrw_dirhist_6='/home/jeppek/au/distSys/exam_presentations'
-let g:netrw_dirhist_5='/home/jeppek/dotfiles/vim'
-let g:netrw_dirhist_4='/home/jeppek/Documents'
-let g:netrw_dirhist_3='/home/jeppek/dotfiles/bash'
-let g:netrw_dirhist_2='/home/jeppek/.config'
-let g:netrw_dirhist_1='/home/jeppek'
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/jeppek/dotfiles/bash'

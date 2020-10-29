@@ -1,0 +1,48 @@
+div.disclaimer {
+    margin-top: 12px;
+    font-size: 10px;
+    font-style: italic;
+}
+div.figure p.caption {
+    padding-top: 0.8em;
+}
+span.caption-number:after {
+    content: ": ";
+ }
+
+/* 
+    Make the rubric look like the H3 header.
+    
+    This way, we can add headings to organize classes
+    with many methods, without affecting how the methods
+    and attributes look or how they are indented.
+
+*/
+.rst-content p.rubric {
+    font-size: 20px;
+    font-weight: 700;
+    color: #404040;
+    font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif;
+    margin-bottom: 24px !important;
+}
+
+/* 
+    sphinx-contrib contentui sets max-width to none,
+    giving a very wide page which makes text hard to
+    read. This sets it to a finite value.
+*/
+@media screen and (min-width: 1300px) {
+    .wy-nav-content {
+        max-width: 800px;
+    }
+}
+
+/* decorate external links in navigation side bar */
+.wy-nav-side a.reference.external:after {
+    font-family: FontAwesome;
+    content: "";
+    color: #b3b3b3;
+    vertical-align: super;
+    font-size: 60%;
+    margin: 0 0.2em;
+}

@@ -1,0 +1,751 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Puppy &mdash; ev3-micropython 2.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'2.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="../_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Gyro Boy" href="gyro_boy.html" />
+    <link rel="prev" title="Robot Arm H25" href="robot_arm.html" />
+    <link rel="stylesheet" href="../_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../startinstall.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../startbrick.html">Using the EV3 Brick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../startrun.html">Creating and running programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../startlinux.html">Accessing advanced EV3 features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../startupgrade.html">Upgrading from v1.0 to v2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Pybricks Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – Programmable Hubs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – Generic I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – Parameters and Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – Timing and Data logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – Sounds and Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – Messaging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Engineering Extras</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../signaltypes.html">Signals and Units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../motors.html">More about Motors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Robot Educator Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="robot_educator_basic.html">Basic Movement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robot_educator_ultrasonic.html">Obstacle Avoidance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robot_educator_line.html">Line Following</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Core Set Programs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="color_sorter.html">Color Sorter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robot_arm.html">Robot Arm H25</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Puppy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gyro_boy.html">Gyro Boy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Expansion Set Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="elephant.html">Elephant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stair_climber.html">Stair Climber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tank_bot.html">Tank Bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="znap.html">Znap</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ev3-micropython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Puppy</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/examples/puppy.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="puppy">
+<h1>Puppy<a class="headerlink" href="#puppy" title="Permalink to this headline">¶</a></h1>
+<p>This example program gives the Puppy up to 8 behaviors. It exhibits different
+behaviors in response to being fed
+(the <a class="reference internal" href="../ev3devices.html#pybricks.ev3devices.ColorSensor" title="pybricks.ev3devices.ColorSensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColorSensor</span></code></a> sees colors)
+or petted
+(the <a class="reference internal" href="../ev3devices.html#pybricks.ev3devices.TouchSensor" title="pybricks.ev3devices.TouchSensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">TouchSensor</span></code></a> is pressed).</p>
+<p class="rubric">Building instructions</p>
+<p>Click <a class="reference external" href="https://education.lego.com/en-us/support/mindstorms-ev3/building-instructions#building-core">here</a> to find all building instructions for the Core Set Models, or use
+<a class="reference external" href="https://le-www-live-s.legocdn.com/sc/media/lessons/mindstorms-ev3/building-instructions/ev3-model-core-set-puppy-7a316ae71b8ecdcd72ad4c4bcd15845d.pdf">this link</a> to go to the Puppy directly.</p>
+<div class="figure align-center" id="id1">
+<span id="fig-puppy"></span><img alt="../_images/puppy.jpg" src="../_images/puppy.jpg" style="width: 80%;" />
+<p class="caption"><span class="caption-number">Figure 29 </span><span class="caption-text">Puppy</span></p>
+</div>
+<p class="rubric">Example program</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env pybricks-micropython</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Example LEGO® MINDSTORMS® EV3 Puppy Program</span>
+<span class="sd">-------------------------------------------</span>
+
+<span class="sd">This program requires LEGO® EV3 MicroPython v2.0.</span>
+<span class="sd">Download: https://education.lego.com/en-us/support/mindstorms-ev3/python-for-ev3</span>
+
+<span class="sd">Building instructions can be found at:</span>
+<span class="sd">https://education.lego.com/en-us/support/mindstorms-ev3/building-instructions#building-core</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">urandom</span>
+
+<span class="kn">from</span> <span class="nn">pybricks.hubs</span> <span class="kn">import</span> <span class="n">EV3Brick</span>
+<span class="kn">from</span> <span class="nn">pybricks.ev3devices</span> <span class="kn">import</span> <span class="n">Motor</span><span class="p">,</span> <span class="n">ColorSensor</span><span class="p">,</span> <span class="n">TouchSensor</span>
+<span class="kn">from</span> <span class="nn">pybricks.parameters</span> <span class="kn">import</span> <span class="n">Port</span><span class="p">,</span> <span class="n">Button</span><span class="p">,</span> <span class="n">Color</span><span class="p">,</span> <span class="n">Direction</span>
+<span class="kn">from</span> <span class="nn">pybricks.media.ev3dev</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageFile</span><span class="p">,</span> <span class="n">SoundFile</span>
+<span class="kn">from</span> <span class="nn">pybricks.tools</span> <span class="kn">import</span> <span class="n">wait</span><span class="p">,</span> <span class="n">StopWatch</span>
+
+
+<span class="k">class</span> <span class="nc">Puppy</span><span class="p">:</span>
+    <span class="c1"># These constants are used for positioning the legs.</span>
+    <span class="n">HALF_UP_ANGLE</span> <span class="o">=</span> <span class="mi">25</span>
+    <span class="n">STAND_UP_ANGLE</span> <span class="o">=</span> <span class="mi">65</span>
+    <span class="n">STRETCH_ANGLE</span> <span class="o">=</span> <span class="mi">125</span>
+
+    <span class="c1"># These constants are for positioning the head.</span>
+    <span class="n">HEAD_UP_ANGLE</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">HEAD_DOWN_ANGLE</span> <span class="o">=</span> <span class="o">-</span><span class="mi">40</span>
+
+    <span class="c1"># These constants are for the eyes.</span>
+    <span class="n">NEUTRAL_EYES</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">ImageFile</span><span class="o">.</span><span class="n">NEUTRAL</span><span class="p">)</span>
+    <span class="n">TIRED_EYES</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">ImageFile</span><span class="o">.</span><span class="n">TIRED_MIDDLE</span><span class="p">)</span>
+    <span class="n">TIRED_LEFT_EYES</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">ImageFile</span><span class="o">.</span><span class="n">TIRED_LEFT</span><span class="p">)</span>
+    <span class="n">TIRED_RIGHT_EYES</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">ImageFile</span><span class="o">.</span><span class="n">TIRED_RIGHT</span><span class="p">)</span>
+    <span class="n">SLEEPING_EYES</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">ImageFile</span><span class="o">.</span><span class="n">SLEEPING</span><span class="p">)</span>
+    <span class="n">HURT_EYES</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">ImageFile</span><span class="o">.</span><span class="n">HURT</span><span class="p">)</span>
+    <span class="n">ANGRY_EYES</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">ImageFile</span><span class="o">.</span><span class="n">ANGRY</span><span class="p">)</span>
+    <span class="n">HEART_EYES</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">ImageFile</span><span class="o">.</span><span class="n">LOVE</span><span class="p">)</span>
+    <span class="n">SQUINTY_EYES</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="n">ImageFile</span><span class="o">.</span><span class="n">TEAR</span><span class="p">)</span>  <span class="c1"># the tear is erased later</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Initialize the EV3 brick.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span> <span class="o">=</span> <span class="n">EV3Brick</span><span class="p">()</span>
+
+        <span class="c1"># Initialize the motors connected to the back legs.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left_leg_motor</span> <span class="o">=</span> <span class="n">Motor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">D</span><span class="p">,</span> <span class="n">Direction</span><span class="o">.</span><span class="n">COUNTERCLOCKWISE</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_leg_motor</span> <span class="o">=</span> <span class="n">Motor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">Direction</span><span class="o">.</span><span class="n">COUNTERCLOCKWISE</span><span class="p">)</span>
+
+        <span class="c1"># Initialize the motor connected to the head.</span>
+        <span class="c1"># Worm gear moves 1 tooth per rotation. It is interfaced to a 24-tooth</span>
+        <span class="c1"># gear. The 24-tooth gear is connected to parallel 12-tooth gears via</span>
+        <span class="c1"># an axle. The 12-tooth gears interface with 36-tooth gears.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head_motor</span> <span class="o">=</span> <span class="n">Motor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">C</span><span class="p">,</span> <span class="n">Direction</span><span class="o">.</span><span class="n">COUNTERCLOCKWISE</span><span class="p">,</span>
+                                <span class="n">gears</span><span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">24</span><span class="p">],</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">36</span><span class="p">]])</span>
+
+        <span class="c1"># Initialize the Color Sensor. It is used to detect the colors when</span>
+        <span class="c1"># feeding the puppy.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color_sensor</span> <span class="o">=</span> <span class="n">ColorSensor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">S4</span><span class="p">)</span>
+
+        <span class="c1"># Initialize the touch sensor. It is used to detect when someone pets</span>
+        <span class="c1"># the puppy.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">touch_sensor</span> <span class="o">=</span> <span class="n">TouchSensor</span><span class="p">(</span><span class="n">Port</span><span class="o">.</span><span class="n">S1</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">pet_count_timer</span> <span class="o">=</span> <span class="n">StopWatch</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">feed_count_timer</span> <span class="o">=</span> <span class="n">StopWatch</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count_changed_timer</span> <span class="o">=</span> <span class="n">StopWatch</span><span class="p">()</span>
+
+        <span class="c1"># These attributes are initialized later in the reset() method.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pet_target</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">feed_target</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pet_count</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">feed_count</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># These attributes are used by properties.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_behavior</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_behavior_changed</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_eyes</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_eyes_changed</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># These attributes are used in the eyes update</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eyes_timer_1</span> <span class="o">=</span> <span class="n">StopWatch</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eyes_timer_1_end</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eyes_timer_2</span> <span class="o">=</span> <span class="n">StopWatch</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eyes_timer_2_end</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eyes_closed</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="c1"># These attributes are used by the playful behavior.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">playful_timer</span> <span class="o">=</span> <span class="n">StopWatch</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">playful_bark_interval</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># These attributes are used in the update methods.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prev_petted</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prev_color</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">adjust_head</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Use the up and down buttons on the EV3 brick to adjust the puppy&#39;s</span>
+<span class="sd">        head up or down.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">load_image</span><span class="p">(</span><span class="n">ImageFile</span><span class="o">.</span><span class="n">EV3_ICON</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">ORANGE</span><span class="p">)</span>
+
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">buttons</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">pressed</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">Button</span><span class="o">.</span><span class="n">CENTER</span> <span class="ow">in</span> <span class="n">buttons</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="k">elif</span> <span class="n">Button</span><span class="o">.</span><span class="n">UP</span> <span class="ow">in</span> <span class="n">buttons</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">head_motor</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">Button</span><span class="o">.</span><span class="n">DOWN</span> <span class="ow">in</span> <span class="n">buttons</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">head_motor</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">head_motor</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+            <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">head_motor</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head_motor</span><span class="o">.</span><span class="n">reset_angle</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">GREEN</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">move_head</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Move the head to the target angle.</span>
+
+<span class="sd">        Arguments:</span>
+<span class="sd">            target (int):</span>
+<span class="sd">                The target angle in degrees. 0 is the starting position,</span>
+<span class="sd">                negative values are below this point and positive values</span>
+<span class="sd">                are above this point.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">head_motor</span><span class="o">.</span><span class="n">run_target</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># must be called when puppy is sitting down.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left_leg_motor</span><span class="o">.</span><span class="n">reset_angle</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_leg_motor</span><span class="o">.</span><span class="n">reset_angle</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c1"># Pick a random number of time to pet the puppy.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pet_target</span> <span class="o">=</span> <span class="n">urandom</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+        <span class="c1"># Pick a random number of time to feed the puppy.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">feed_target</span> <span class="o">=</span> <span class="n">urandom</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="c1"># Pet count and feed count both start at 1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pet_count</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">feed_count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+        <span class="c1"># Reset timers.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pet_count_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">feed_count_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">count_changed_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+        <span class="c1"># Set initial behavior.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">behavior</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">idle</span>
+
+    <span class="c1"># The next 8 methods define the 8 behaviors of the puppy.</span>
+
+    <span class="k">def</span> <span class="nf">idle</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The puppy is idle and waiting for someone to pet it or feed it.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">did_behavior_change</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;idle&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stand_up</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_eyes</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_behavior</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_pet_count</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_feed_count</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">go_to_sleep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Makes the puppy go to sleep.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">did_behavior_change</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;go_to_sleep&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">TIRED_EYES</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sit_down</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">move_head</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">HEAD_DOWN_ANGLE</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SLEEPING_EYES</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">SNORING</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">touch_sensor</span><span class="o">.</span><span class="n">pressed</span><span class="p">()</span> <span class="ow">and</span> <span class="n">Button</span><span class="o">.</span><span class="n">CENTER</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">pressed</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">count_changed_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">behavior</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wake_up</span>
+
+    <span class="k">def</span> <span class="nf">wake_up</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Makes the puppy wake up.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">did_behavior_change</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;wake_up&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">TIRED_EYES</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">DOG_WHINE</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">move_head</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">HEAD_UP_ANGLE</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sit_down</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stretch</span><span class="p">()</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stand_up</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">behavior</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">idle</span>
+
+    <span class="k">def</span> <span class="nf">act_playful</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Makes the puppy act playful.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">did_behavior_change</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;act_playful&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">NEUTRAL_EYES</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stand_up</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">playful_bark_interval</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_pet_count</span><span class="p">():</span>
+            <span class="c1"># If the puppy was petted, then we are done being playful</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">behavior</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">idle</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">playful_timer</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">playful_bark_interval</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">DOG_BARK_2</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">playful_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">playful_bark_interval</span> <span class="o">=</span> <span class="n">urandom</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span>
+
+    <span class="k">def</span> <span class="nf">act_angry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Makes the puppy act angry.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">did_behavior_change</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;act_angry&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ANGRY_EYES</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">DOG_GROWL</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stand_up</span><span class="p">()</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">1500</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">DOG_BARK_1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pet_count</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pet_count:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pet_count</span><span class="p">,</span> <span class="s1">&#39;pet_target:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pet_target</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">behavior</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">idle</span>
+
+    <span class="k">def</span> <span class="nf">act_hungry</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">did_behavior_change</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;act_hungry&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">HURT_EYES</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sit_down</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">DOG_WHINE</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_feed_count</span><span class="p">():</span>
+            <span class="c1"># If we got food, then we are not longer hungry.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">behavior</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">idle</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">update_pet_count</span><span class="p">():</span>
+            <span class="c1"># If we got a pet instead of food, then we are angry.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">behavior</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">act_angry</span>
+
+    <span class="k">def</span> <span class="nf">go_to_bathroom</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">did_behavior_change</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;go_to_bathroom&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SQUINTY_EYES</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stand_up</span><span class="p">()</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_leg_motor</span><span class="o">.</span><span class="n">run_target</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">STRETCH_ANGLE</span><span class="p">)</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">800</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">HORN_1</span><span class="p">)</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">right_leg_motor</span><span class="o">.</span><span class="n">run_angle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">right_leg_motor</span><span class="o">.</span><span class="n">run_angle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_leg_motor</span><span class="o">.</span><span class="n">run_target</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">STAND_UP_ANGLE</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">feed_count</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">behavior</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">idle</span>
+
+    <span class="k">def</span> <span class="nf">act_happy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">did_behavior_change</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;act_happy&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">HEART_EYES</span>
+        <span class="c1"># self.move_head(self.?)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sit_down</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">DOG_BARK_1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hop</span><span class="p">()</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sit_down</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">sit_down</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Makes the puppy sit down.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left_leg_motor</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_leg_motor</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">)</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left_leg_motor</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_leg_motor</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+    <span class="c1"># The next 4 methods define actions that are used to make some parts of</span>
+    <span class="c1"># the behaviors above.</span>
+
+    <span class="k">def</span> <span class="nf">stand_up</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Makes the puppy stand up.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left_leg_motor</span><span class="o">.</span><span class="n">run_target</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">HALF_UP_ANGLE</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_leg_motor</span><span class="o">.</span><span class="n">run_target</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">HALF_UP_ANGLE</span><span class="p">)</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">left_leg_motor</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">done</span><span class="p">():</span>
+            <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">left_leg_motor</span><span class="o">.</span><span class="n">run_target</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">STAND_UP_ANGLE</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_leg_motor</span><span class="o">.</span><span class="n">run_target</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">STAND_UP_ANGLE</span><span class="p">)</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">left_leg_motor</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">done</span><span class="p">():</span>
+            <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+        <span class="n">wait</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">stretch</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Makes the puppy stretch its legs backwards.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stand_up</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">left_leg_motor</span><span class="o">.</span><span class="n">run_target</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">STRETCH_ANGLE</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_leg_motor</span><span class="o">.</span><span class="n">run_target</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">STRETCH_ANGLE</span><span class="p">)</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">left_leg_motor</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">done</span><span class="p">():</span>
+            <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">DOG_WHINE</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">left_leg_motor</span><span class="o">.</span><span class="n">run_target</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">STAND_UP_ANGLE</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_leg_motor</span><span class="o">.</span><span class="n">run_target</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">STAND_UP_ANGLE</span><span class="p">)</span>
+        <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">left_leg_motor</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">done</span><span class="p">():</span>
+            <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">hop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Makes the puppy hop.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left_leg_motor</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_leg_motor</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">275</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left_leg_motor</span><span class="o">.</span><span class="n">hold</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_leg_motor</span><span class="o">.</span><span class="n">hold</span><span class="p">()</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">275</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left_leg_motor</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_leg_motor</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">)</span>
+        <span class="n">wait</span><span class="p">(</span><span class="mi">275</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left_leg_motor</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right_leg_motor</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">behavior</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets and sets the current behavior.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_behavior</span>
+
+    <span class="nd">@behavior</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">behavior</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_behavior</span> <span class="o">!=</span> <span class="n">value</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_behavior</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_behavior_changed</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">did_behavior_change</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;bool: Tests if the behavior changed since the last time this</span>
+<span class="sd">        property was read.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_behavior_changed</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_behavior_changed</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">update_behavior</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Updates the :prop:`behavior` property based on the current state</span>
+<span class="sd">        of petting and feeding.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pet_count</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">pet_target</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">feed_count</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">feed_target</span><span class="p">:</span>
+            <span class="c1"># If we have the exact right amount of pets and feeds, act happy.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">behavior</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">act_happy</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pet_count</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">pet_target</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">feed_count</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">feed_target</span><span class="p">:</span>
+            <span class="c1"># If we have too many pets and not enough food, act angry.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">behavior</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">act_angry</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pet_count</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">pet_target</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">feed_count</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">feed_target</span><span class="p">:</span>
+            <span class="c1"># If we have not enough pets and too much food, go to the bathroom.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">behavior</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">go_to_bathroom</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pet_count</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">feed_count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># If we have no pets and some food, act playful.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">behavior</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">act_playful</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">feed_count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># If we have no food, act hungry.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">behavior</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">act_hungry</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">eyes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets and sets the eyes.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eyes</span>
+
+    <span class="nd">@eyes</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">eyes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_eyes</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_eyes</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">load_image</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">update_eyes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">eyes_timer_1</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">eyes_timer_1_end</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">eyes_timer_1</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">SLEEPING_EYES</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">eyes_timer_1_end</span> <span class="o">=</span> <span class="n">urandom</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">TIRED_RIGHT_EYES</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">eyes_timer_1_end</span> <span class="o">=</span> <span class="mi">250</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SLEEPING_EYES</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">eyes_timer_2</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">eyes_timer_2_end</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">eyes_timer_2</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SLEEPING_EYES</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">eyes_timer_2_end</span> <span class="o">=</span> <span class="n">urandom</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">TIRED_LEFT_EYES</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">TIRED_LEFT_EYES</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">TIRED_RIGHT_EYES</span>
+
+    <span class="k">def</span> <span class="nf">update_pet_count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Updates the :attr:`pet_count` attribute if the puppy is currently</span>
+<span class="sd">        being petted (touch sensor pressed).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool:</span>
+<span class="sd">                ``True`` if the puppy was petted since the last time this method</span>
+<span class="sd">                was called, otherwise ``False``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">changed</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="n">petted</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">touch_sensor</span><span class="o">.</span><span class="n">pressed</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">petted</span> <span class="ow">and</span> <span class="n">petted</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prev_petted</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pet_count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pet_count:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pet_count</span><span class="p">,</span> <span class="s1">&#39;pet_target:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pet_target</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">count_changed_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">behavior</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">act_hungry</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SQUINTY_EYES</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">DOG_SNIFF</span><span class="p">)</span>
+            <span class="n">changed</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">prev_petted</span> <span class="o">=</span> <span class="n">petted</span>
+        <span class="k">return</span> <span class="n">changed</span>
+
+    <span class="k">def</span> <span class="nf">update_feed_count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Updates the :attr:`feed_count` attribute if the puppy is currently</span>
+<span class="sd">        being fed (color sensor detects a color).</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool:</span>
+<span class="sd">                ``True`` if the puppy was fed since the last time this method</span>
+<span class="sd">                was called, otherwise ``False``.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">color_sensor</span><span class="o">.</span><span class="n">color</span><span class="p">()</span>
+        <span class="n">changed</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">if</span> <span class="n">color</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">color</span> <span class="o">!=</span> <span class="n">Color</span><span class="o">.</span><span class="n">BLACK</span> <span class="ow">and</span> <span class="n">color</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prev_color</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">feed_count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;feed_count:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">feed_count</span><span class="p">,</span> <span class="s1">&#39;feed_target:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">feed_target</span><span class="p">)</span>
+            <span class="n">changed</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">count_changed_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">prev_color</span> <span class="o">=</span> <span class="n">color</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SQUINTY_EYES</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">CRUNCHING</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">changed</span>
+
+    <span class="k">def</span> <span class="nf">monitor_counts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Monitors pet and feed counts and decreases them over time.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pet_count_timer</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">15000</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pet_count_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pet_count</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pet_count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;pet_count:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pet_count</span><span class="p">,</span> <span class="s1">&#39;pet_target:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pet_target</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">feed_count_timer</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">15000</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">feed_count_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">feed_count</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">feed_count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;feed_count:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">feed_count</span><span class="p">,</span> <span class="s1">&#39;feed_target:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">feed_target</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">count_changed_timer</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">30000</span><span class="p">:</span>
+            <span class="c1"># If nothing has happened for 30 seconds, go to sleep</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">count_changed_timer</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">behavior</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">go_to_sleep</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This is the main program run loop.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sit_down</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">adjust_head</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">eyes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">SLEEPING_EYES</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">monitor_counts</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">behavior</span><span class="p">()</span>
+            <span class="n">wait</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+
+<span class="c1"># This covers up the tear to make a new image.</span>
+<span class="n">Puppy</span><span class="o">.</span><span class="n">SQUINTY_EYES</span><span class="o">.</span><span class="n">draw_box</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">Color</span><span class="o">.</span><span class="n">WHITE</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">puppy</span> <span class="o">=</span> <span class="n">Puppy</span><span class="p">()</span>
+    <span class="n">puppy</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gyro_boy.html" class="btn btn-neutral float-right" title="Gyro Boy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="robot_arm.html" class="btn btn-neutral float-left" title="Robot Arm H25" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

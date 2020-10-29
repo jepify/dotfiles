@@ -1,0 +1,3 @@
+# Projects are generated at build time. See `build-resources.sh`.
+*
+!.gitignore

@@ -1,0 +1,902 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ev3devices – EV3 Devices &mdash; ev3-micropython 2.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'2.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="nxtdevices – NXT Devices" href="nxtdevices.html" />
+    <link rel="prev" title="hubs – Programmable Hubs" href="hubs.html" />
+    <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="startinstall.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startbrick.html">Using the EV3 Brick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startrun.html">Creating and running programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startlinux.html">Accessing advanced EV3 features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startupgrade.html">Upgrading from v1.0 to v2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Pybricks Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – Programmable Hubs</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 Devices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#motors">Motors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#touch-sensor">Touch Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#color-sensor">Color Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#infrared-sensor-and-beacon">Infrared Sensor and Beacon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ultrasonic-sensor">Ultrasonic Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gyroscopic-sensor">Gyroscopic Sensor</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – Generic I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – Parameters and Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – Timing and Data logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – Sounds and Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – Messaging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Engineering Extras</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="signaltypes.html">Signals and Units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motors.html">More about Motors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Robot Educator Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_basic.html">Basic Movement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_ultrasonic.html">Obstacle Avoidance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_line.html">Line Following</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Core Set Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/color_sorter.html">Color Sorter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_arm.html">Robot Arm H25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/puppy.html">Puppy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/gyro_boy.html">Gyro Boy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Expansion Set Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/elephant.html">Elephant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/stair_climber.html">Stair Climber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/tank_bot.html">Tank Bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/znap.html">Znap</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ev3-micropython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 Devices</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/ev3devices.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pybricks.ev3devices">
+<span id="ev3devices-ev3-devices"></span><h1><a class="reference internal" href="#module-pybricks.ev3devices" title="pybricks.ev3devices"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ev3devices</span></code></a> – EV3 Devices<a class="headerlink" href="#module-pybricks.ev3devices" title="Permalink to this headline">¶</a></h1>
+<p>LEGO® MINDSTORMS® EV3 motors and sensors.</p>
+<div class="section" id="motors">
+<h2>Motors<a class="headerlink" href="#motors" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id1">
+<span id="fig-ev3motors"></span><img alt="_images/ev3motors_label.png" src="_images/ev3motors_label.png" style="width: 100%;" />
+<p class="caption"><span class="caption-number">Figure 17 </span><span class="caption-text">EV3-compatible motors. The arrows indicate the default positive direction.</span></p>
+</div>
+<dl class="class">
+<dt id="pybricks.ev3devices.Motor">
+<em class="property">class </em><code class="descname">Motor</code><span class="sig-paren">(</span><em>port</em>, <em>positive_direction=Direction.CLOCKWISE</em>, <em>gears=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generic class to control motors with built-in rotation sensors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – Port to which the motor is connected.</li>
+<li><strong>positive_direction</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Direction" title="pybricks.parameters.Direction"><em>Direction</em></a>) – Which direction the motor should
+turn when you give a positive speed value or
+angle.</li>
+<li><strong>gears</strong> (<em>list</em>) – <p>List of gears linked to the motor.</p>
+<p>For example: <code class="docutils literal notranslate"><span class="pre">[12,</span> <span class="pre">36]</span></code> represents a gear train with a
+12-tooth and a 36-tooth gear. Use a list of lists for multiple
+gear trains, such as <code class="docutils literal notranslate"><span class="pre">[[12,</span> <span class="pre">36],</span> <span class="pre">[20,</span> <span class="pre">16,</span> <span class="pre">40]]</span></code>.</p>
+<p>When you specify a gear train, all motor commands and settings
+are automatically adjusted to account for the resulting gear
+ratio.  The motor direction remains unchanged by this.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Measuring</p>
+<dl class="method">
+<dt id="pybricks.ev3devices.Motor.speed">
+<code class="descname">speed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the speed of the motor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Motor speed.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">rotational speed: deg/s</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.Motor.angle">
+<code class="descname">angle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the rotation angle of the motor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Motor angle.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">angle: deg</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.Motor.reset_angle">
+<code class="descname">reset_angle</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.reset_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the accumulated rotation angle of the motor to a desired value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>angle</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">angle: deg</span></a>) – Value to which the angle should be reset.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Stopping</p>
+<dl class="method">
+<dt id="pybricks.ev3devices.Motor.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops the motor and lets it spin freely.</p>
+<p>The motor gradually stops due to friction.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.Motor.brake">
+<code class="descname">brake</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.brake" title="Permalink to this definition">¶</a></dt>
+<dd><p>Passively brakes the motor.</p>
+<p>The motor stops due to friction, plus the voltage that
+is generated while the motor is still moving.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.Motor.hold">
+<code class="descname">hold</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.hold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops the motor and actively holds it at its current angle.</p>
+</dd></dl>
+
+<p class="rubric">Action</p>
+<dl class="method">
+<dt id="pybricks.ev3devices.Motor.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>speed</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the motor at a constant speed.</p>
+<p>The motor accelerates to the given speed and keeps running at this
+speed until you give a new command.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">rotational speed: deg/s</span></a>) – Speed of the motor.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.Motor.run_time">
+<code class="descname">run_time</code><span class="sig-paren">(</span><em>speed</em>, <em>time</em>, <em>then=Stop.HOLD</em>, <em>wait=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.run_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the motor at a constant speed for a given amount of time.</p>
+<p>The motor accelerates to the given speed, keeps running at this speed,
+and then decelerates. The total maneuver lasts for exactly the given
+amount of <code class="docutils literal notranslate"><span class="pre">time</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">rotational speed: deg/s</span></a>) – Speed of the motor.</li>
+<li><strong>time</strong> (<a class="reference internal" href="signaltypes.html#id1"><span class="std std-ref">time: ms</span></a>) – Duration of the maneuver.</li>
+<li><strong>then</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Stop" title="pybricks.parameters.Stop"><em>Stop</em></a>) – What to do after coming to a standstill.</li>
+<li><strong>wait</strong> (<em>bool</em>) – Wait for the maneuver to complete before continuing
+with the rest of the program.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.Motor.run_angle">
+<code class="descname">run_angle</code><span class="sig-paren">(</span><em>speed</em>, <em>rotation_angle</em>, <em>then=Stop.HOLD</em>, <em>wait=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.run_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the motor at a constant speed by a given angle.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">rotational speed: deg/s</span></a>) – Speed of the motor.</li>
+<li><strong>rotation_angle</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">angle: deg</span></a>) – Angle by which the motor should
+rotate.</li>
+<li><strong>then</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Stop" title="pybricks.parameters.Stop"><em>Stop</em></a>) – What to do after coming to a standstill.</li>
+<li><strong>wait</strong> (<em>bool</em>) – Wait for the maneuver to complete before continuing
+with the rest of the program.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.Motor.run_target">
+<code class="descname">run_target</code><span class="sig-paren">(</span><em>speed</em>, <em>target_angle</em>, <em>then=Stop.HOLD</em>, <em>wait=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.run_target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the motor at a constant speed towards a
+given target angle.</p>
+<p>The direction of rotation is automatically selected based on the target
+angle. It does matter if <code class="docutils literal notranslate"><span class="pre">speed</span></code> is positive or negative.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">rotational speed: deg/s</span></a>) – Speed of the motor.</li>
+<li><strong>target_angle</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">angle: deg</span></a>) – Angle that the motor should
+rotate to.</li>
+<li><strong>then</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Stop" title="pybricks.parameters.Stop"><em>Stop</em></a>) – What to do after coming to a standstill.</li>
+<li><strong>wait</strong> (<em>bool</em>) – Wait for the motor to reach the target
+before continuing with the rest of the
+program.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.Motor.run_until_stalled">
+<code class="descname">run_until_stalled</code><span class="sig-paren">(</span><em>speed</em>, <em>then=Stop.COAST</em>, <em>duty_limit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.run_until_stalled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the motor at a constant speed until it stalls.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>speed</strong> (<a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">rotational speed: deg/s</span></a>) – Speed of the motor.</li>
+<li><strong>then</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Stop" title="pybricks.parameters.Stop"><em>Stop</em></a>) – What to do after coming to a standstill.</li>
+<li><strong>duty_limit</strong> (<a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">percentage: %</span></a>) – Torque limit during this
+command. This is useful to avoid applying the full motor
+torque to a geared or lever mechanism.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Angle at which the motor becomes stalled.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">angle: deg</span></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.Motor.dc">
+<code class="descname">dc</code><span class="sig-paren">(</span><em>duty</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.dc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotates the motor at a given duty cycle (also known as “power”).</p>
+<p>This method lets you use a motor just like a simple DC motor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>duty</strong> (<a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">percentage: %</span></a>) – The duty cycle (-100.0 to 100).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Advanced motion control</p>
+<dl class="method">
+<dt id="pybricks.ev3devices.Motor.track_target">
+<code class="descname">track_target</code><span class="sig-paren">(</span><em>target_angle</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.Motor.track_target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tracks a target angle. This is similar to <a class="reference internal" href="#pybricks.ev3devices.Motor.run_target" title="pybricks.ev3devices.Motor.run_target"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run_target()</span></code></a>, but
+the usual smooth acceleration is skipped: it will move to the target
+angle as fast as possible. This method is useful if you want to
+continuously change the target angle.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>target_angle</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">angle: deg</span></a>) – Target angle that the motor should
+rotate to.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pybricks.ev3devices.Motor.control">
+<code class="descname">control</code><a class="headerlink" href="#pybricks.ev3devices.Motor.control" title="Permalink to this definition">¶</a></dt>
+<dd><p>The motors use PID control to accurately track the speed and
+angle targets that you specify. You can change its behavior through the
+<code class="docutils literal notranslate"><span class="pre">control</span></code> attribute of the motor. See <a class="reference internal" href="motors.html#control"><span class="std std-ref">The Control Class</span></a> for an overview
+of available methods.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="touch-sensor">
+<h2>Touch Sensor<a class="headerlink" href="#touch-sensor" title="Permalink to this headline">¶</a></h2>
+<div class="figure">
+<img alt="_images/sensor_ev3_touch.png" src="_images/sensor_ev3_touch.png" style="width: 18%;" />
+</div>
+<dl class="class">
+<dt id="pybricks.ev3devices.TouchSensor">
+<em class="property">class </em><code class="descname">TouchSensor</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.TouchSensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>LEGO® MINDSTORMS® EV3 Touch Sensor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – Port to which the sensor is connected.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pybricks.ev3devices.TouchSensor.pressed">
+<code class="descname">pressed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.TouchSensor.pressed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the sensor is pressed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">True</span></code> if the sensor is pressed, <code class="docutils literal notranslate"><span class="pre">False</span></code> if it is
+not pressed.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="color-sensor">
+<h2>Color Sensor<a class="headerlink" href="#color-sensor" title="Permalink to this headline">¶</a></h2>
+<div class="figure">
+<img alt="_images/sensor_ev3_color.png" src="_images/sensor_ev3_color.png" style="width: 18%;" />
+</div>
+<dl class="class">
+<dt id="pybricks.ev3devices.ColorSensor">
+<em class="property">class </em><code class="descname">ColorSensor</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.ColorSensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>LEGO® MINDSTORMS® EV3 Color Sensor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – Port to which the sensor is connected.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pybricks.ev3devices.ColorSensor.color">
+<code class="descname">color</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.ColorSensor.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Measures the color of a surface.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">Color.BLACK</span></code>, <code class="docutils literal notranslate"><span class="pre">Color.BLUE</span></code>, <code class="docutils literal notranslate"><span class="pre">Color.GREEN</span></code>, <code class="docutils literal notranslate"><span class="pre">Color.YELLOW</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Color.RED</span></code>, <code class="docutils literal notranslate"><span class="pre">Color.WHITE</span></code>, <code class="docutils literal notranslate"><span class="pre">Color.BROWN</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="parameters.html#pybricks.parameters.Color" title="pybricks.parameters.Color"><code class="xref py py-class docutils literal notranslate"><span class="pre">Color</span></code></a>, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if no color is
+detected.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.ColorSensor.ambient">
+<code class="descname">ambient</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.ColorSensor.ambient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Measures the ambient light intensity.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Ambient light intensity, ranging from 0 (dark)
+to 100 (bright).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">percentage: %</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.ColorSensor.reflection">
+<code class="descname">reflection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.ColorSensor.reflection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Measures the reflection of a surface using a red light.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Reflection, ranging from 0 (no reflection) to
+100 (high reflection).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">percentage: %</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.ColorSensor.rgb">
+<code class="descname">rgb</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.ColorSensor.rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Measures the reflection of a surface using a red, green, and then a
+blue light.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Tuple of reflections for red, green, and blue light, each
+ranging from 0.0 (no reflection) to 100.0 (high reflection).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">(<a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">percentage: %</span></a>, <a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">percentage: %</span></a>, <a class="reference internal" href="signaltypes.html#percentage"><span class="std std-ref">percentage: %</span></a>)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="infrared-sensor-and-beacon">
+<h2>Infrared Sensor and Beacon<a class="headerlink" href="#infrared-sensor-and-beacon" title="Permalink to this headline">¶</a></h2>
+<div class="figure">
+<img alt="_images/sensor_ev3_ir.png" src="_images/sensor_ev3_ir.png" style="width: 60%;" />
+</div>
+<dl class="class">
+<dt id="pybricks.ev3devices.InfraredSensor">
+<em class="property">class </em><code class="descname">InfraredSensor</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>LEGO® MINDSTORMS® EV3 Infrared Sensor and Beacon.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – Port to which the sensor is connected.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pybricks.ev3devices.InfraredSensor.distance">
+<code class="descname">distance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor.distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Measures the relative distance between the sensor and an object using
+infrared light.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Relative distance ranging from 0 (closest)
+to 100 (farthest).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="signaltypes.html#relativedistance"><span class="std std-ref">relative distance: %</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.InfraredSensor.beacon">
+<code class="descname">beacon</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor.beacon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Measures the relative distance and angle between the remote and the
+infrared sensor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>channel</strong> (<em>int</em>) – Channel number of the remote.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Tuple of relative distance (0 to 100) and approximate angle
+(-75 to 75 degrees) between remote and infrared sensor.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">(<a class="reference internal" href="signaltypes.html#relativedistance"><span class="std std-ref">relative distance: %</span></a>, <a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">angle: deg</span></a>) or
+(<code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code>) if no remote is detected.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.InfraredSensor.buttons">
+<code class="descname">buttons</code><span class="sig-paren">(</span><em>channel</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor.buttons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks which buttons on the infrared remote are pressed.</p>
+<p>This method can detect up to two buttons at once. If you press
+more buttons, you may not get useful data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>channel</strong> (<em>int</em>) – Channel number of the remote.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">List of pressed buttons on the remote on selected channel.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List of <a class="reference internal" href="parameters.html#pybricks.parameters.Button" title="pybricks.parameters.Button"><code class="xref py py-class docutils literal notranslate"><span class="pre">Button</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.InfraredSensor.keypad">
+<code class="descname">keypad</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.InfraredSensor.keypad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks which buttons on the infrared remote are pressed.</p>
+<p>This method can independently detect all 4 up/down buttons, but
+it cannot detect the beacon button.</p>
+<p>This method only works with the remote in channel 1.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of pressed buttons on the remote on selected channel.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List of <a class="reference internal" href="parameters.html#pybricks.parameters.Button" title="pybricks.parameters.Button"><code class="xref py py-class docutils literal notranslate"><span class="pre">Button</span></code></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ultrasonic-sensor">
+<h2>Ultrasonic Sensor<a class="headerlink" href="#ultrasonic-sensor" title="Permalink to this headline">¶</a></h2>
+<div class="figure">
+<img alt="_images/sensor_ev3_ultrasonic.png" src="_images/sensor_ev3_ultrasonic.png" style="width: 22%;" />
+</div>
+<dl class="class">
+<dt id="pybricks.ev3devices.UltrasonicSensor">
+<em class="property">class </em><code class="descname">UltrasonicSensor</code><span class="sig-paren">(</span><em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.UltrasonicSensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>LEGO® MINDSTORMS® EV3 Ultrasonic Sensor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – Port to which the sensor is connected.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pybricks.ev3devices.UltrasonicSensor.distance">
+<code class="descname">distance</code><span class="sig-paren">(</span><em>silent=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.UltrasonicSensor.distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Measures the distance between the sensor and an object using
+ultrasonic sound waves.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>silent</strong> (<em>bool</em>) – Choose <code class="docutils literal notranslate"><span class="pre">True</span></code> to turn the sensor off after
+measuring the distance. This reduces interference
+with other ultrasonic sensors. If you do
+this too frequently, the sensor can freeze.
+If this happens, unplug it and plug it back in.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Distance.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="signaltypes.html#distance"><span class="std std-ref">distance: mm</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.UltrasonicSensor.presence">
+<code class="descname">presence</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.UltrasonicSensor.presence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks for the presence of other ultrasonic sensors by detecting
+ultrasonic sounds.</p>
+<p>If the other ultrasonic sensor is operating in silent mode, you can
+only detect the presence of that sensor while it is taking a
+measurement.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="docutils literal notranslate"><span class="pre">True</span></code> if ultrasonic sounds are detected,
+<code class="docutils literal notranslate"><span class="pre">False</span></code> if not.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="gyroscopic-sensor">
+<h2>Gyroscopic Sensor<a class="headerlink" href="#gyroscopic-sensor" title="Permalink to this headline">¶</a></h2>
+<div class="figure">
+<img alt="_images/sensor_ev3_gyro.png" src="_images/sensor_ev3_gyro.png" style="width: 18%;" />
+</div>
+<dl class="class">
+<dt id="pybricks.ev3devices.GyroSensor">
+<em class="property">class </em><code class="descname">GyroSensor</code><span class="sig-paren">(</span><em>port</em>, <em>positive_direction=Direction.CLOCKWISE</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.GyroSensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>LEGO® MINDSTORMS® EV3 Gyro Sensor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>port</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Port" title="pybricks.parameters.Port"><em>Port</em></a>) – Port to which the sensor is connected.</li>
+<li><strong>positive_direction</strong> (<a class="reference internal" href="parameters.html#pybricks.parameters.Direction" title="pybricks.parameters.Direction"><em>Direction</em></a>) – Positive rotation direction when looking at the red dot on top
+of the sensor.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="pybricks.ev3devices.GyroSensor.speed">
+<code class="descname">speed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.GyroSensor.speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the speed (angular velocity) of the sensor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Sensor angular velocity.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="signaltypes.html#speed"><span class="std std-ref">rotational speed: deg/s</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.GyroSensor.angle">
+<code class="descname">angle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.GyroSensor.angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the accumulated angle of the sensor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Rotation angle.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">angle: deg</span></a></td>
+</tr>
+</tbody>
+</table>
+<p>If you use the <a class="reference internal" href="#pybricks.ev3devices.GyroSensor.angle" title="pybricks.ev3devices.GyroSensor.angle"><code class="xref py py-meth docutils literal notranslate"><span class="pre">angle()</span></code></a> method, you cannot use the
+<a class="reference internal" href="#pybricks.ev3devices.GyroSensor.speed" title="pybricks.ev3devices.GyroSensor.speed"><code class="xref py py-meth docutils literal notranslate"><span class="pre">speed()</span></code></a> method in the same program. Doing so would reset the
+sensor angle to zero every time you read the speed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pybricks.ev3devices.GyroSensor.reset_angle">
+<code class="descname">reset_angle</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#pybricks.ev3devices.GyroSensor.reset_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the rotation angle of the sensor to a desired value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>angle</strong> (<a class="reference internal" href="signaltypes.html#angle"><span class="std std-ref">angle: deg</span></a>) – Value to which the angle should be reset.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="nxtdevices.html" class="btn btn-neutral float-right" title="nxtdevices – NXT Devices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="hubs.html" class="btn btn-neutral float-left" title="hubs – Programmable Hubs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

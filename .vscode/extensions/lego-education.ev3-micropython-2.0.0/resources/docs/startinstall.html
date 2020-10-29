@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation &mdash; ev3-micropython 2.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'2.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Using the EV3 Brick" href="startbrick.html" />
+    <link rel="prev" title="Getting started with LEGO® MINDSTORMS Education EV3 MicroPython" href="index.html" />
+    <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-do-you-need">What do you need?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preparing-your-computer">Preparing your computer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preparing-the-microsd-card">Preparing the microSD card</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#updating-the-microsd-card">Updating the microSD card</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="startbrick.html">Using the EV3 Brick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startrun.html">Creating and running programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startlinux.html">Accessing advanced EV3 features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startupgrade.html">Upgrading from v1.0 to v2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Pybricks Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – Programmable Hubs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – Generic I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – Parameters and Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – Timing and Data logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – Sounds and Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – Messaging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Engineering Extras</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="signaltypes.html">Signals and Units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motors.html">More about Motors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Robot Educator Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_basic.html">Basic Movement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_ultrasonic.html">Obstacle Avoidance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_line.html">Line Following</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Core Set Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/color_sorter.html">Color Sorter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_arm.html">Robot Arm H25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/puppy.html">Puppy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/gyro_boy.html">Gyro Boy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Expansion Set Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/elephant.html">Elephant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/stair_climber.html">Stair Climber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/tank_bot.html">Tank Bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/znap.html">Znap</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ev3-micropython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/startinstall.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>This page guides you through the steps to collect and install everything you
+need to start programming.</p>
+<div class="section" id="what-do-you-need">
+<h2>What do you need?<a class="headerlink" href="#what-do-you-need" title="Permalink to this headline">¶</a></h2>
+<p>To get started, you’ll need:</p>
+<ul>
+<li><p class="first">A Windows 10 or Mac OS computer</p>
+</li>
+<li><p class="first">Internet access and administrator access</p>
+<blockquote>
+<div><p>This is required during the installation only. You will not need special
+access to write and run programs later on.</p>
+</div></blockquote>
+</li>
+<li><p class="first">A microSD card</p>
+<blockquote>
+<div><p>You’ll need a card with a minimum capacity of 4GB and a maximum capacity
+of 32GB. This type of microSD card is also known as microSDHC. We recommend
+cards with Application Performance Class A1.</p>
+</div></blockquote>
+</li>
+<li><p class="first">A microSD card slot or card reader in your computer</p>
+<blockquote>
+<div><p>If your computer does not have a (micro)SD card slot, you can use an
+external USB (micro)SD card reader.</p>
+</div></blockquote>
+</li>
+<li><p class="first">A mini-USB cable, like the one included with your EV3 set</p>
+</li>
+</ul>
+<p>The typical configuration of this equipment is summarized
+in <a class="reference internal" href="#fig-overview"><span class="std std-numref">Figure 1</span></a>.</p>
+<div class="figure align-center" id="id1">
+<span id="fig-overview"></span><img alt="overview" src="_images/overview_label.png" style="width: 90%;" />
+<p class="caption"><span class="caption-number">Figure 1 </span><span class="caption-text">Setup overview</span></p>
+</div>
+</div>
+<div class="section" id="preparing-your-computer">
+<h2>Preparing your computer<a class="headerlink" href="#preparing-your-computer" title="Permalink to this headline">¶</a></h2>
+<p>You’ll write your MicroPython programs using Visual Studio Code. Follow the
+steps below to download, install, and configure this application:</p>
+<ol class="arabic simple">
+<li>Download <a class="reference external" href="https://code.visualstudio.com/Download">Visual Studio Code</a>.</li>
+<li>Follow the on-screen instructions to install the application.</li>
+<li>Launch Visual Studio Code.</li>
+<li>Open the extensions tab.</li>
+<li>Install the EV3 MicroPython extension as shown in <a class="reference internal" href="#fig-store"><span class="std std-numref">Figure 2</span></a>.</li>
+</ol>
+<div class="figure align-center" id="id2">
+<span id="fig-store"></span><img alt="store" src="_images/store_label.png" />
+<p class="caption"><span class="caption-number">Figure 2 </span><span class="caption-text">Installing the extension from the Visual Studio Code marketplace</span></p>
+</div>
+</div>
+<div class="section" id="preparing-the-microsd-card">
+<span id="prepsdcard"></span><h2>Preparing the microSD card<a class="headerlink" href="#preparing-the-microsd-card" title="Permalink to this headline">¶</a></h2>
+<p>To make it possible to run MicroPython programs on your EV3 Brick, you’ll now
+learn how to install the required tools on your microSD card.</p>
+<p>If the microSD card contains files you want to keep, make sure to create a
+backup of its contents first.
+See <a class="reference internal" href="startrun.html#managefiles"><span class="std std-ref">managing files on the EV3</span></a> to learn how to backup your
+previous MicroPython programs if necessary.</p>
+<p><em>This process erases everything on your microSD card, including any previous
+MicroPython programs on it.</em></p>
+<p>To install the MicroPython tools on your microSD card:</p>
+<ol class="arabic">
+<li><p class="first">Download the <a class="reference external" href="https://education.lego.com/en-us/support/mindstorms-ev3/python-for-ev3">EV3 MicroPython microSD card image</a> and save it in a convenient location. This file is approximately 360 MB. You do <strong>not</strong> need to unzip the file.</p>
+</li>
+<li><p class="first">Download and install a microSD card flashing tool
+such as <a class="reference external" href="https://www.balena.io/etcher/">Etcher</a>.</p>
+</li>
+<li><p class="first">Insert the microSD card into your computer or card reader.</p>
+</li>
+<li><p class="first">Launch the flashing tool and follow the steps on your screen to install
+the file you have just downloaded. If you use Etcher, you can follow the
+instructions below, as shown in <a class="reference internal" href="#fig-etcher"><span class="std std-numref">Figure 3</span></a>.</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Select the EV3 MicroPython microSD card image file you have just
+downloaded.</li>
+<li>Select your microSD card. Make sure that the device and size correspond
+to your microSD card.</li>
+<li>Start the flashing process. This may take several minutes. Do not remove
+the card until the flashing process is complete.</li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+<div class="figure align-center" id="id3">
+<span id="fig-etcher"></span><img alt="etcher" src="_images/etcher_label.png" style="width: 85%;" />
+<p class="caption"><span class="caption-number">Figure 3 </span><span class="caption-text">Using Etcher to flash the EV3 MicroPython microSD card image</span></p>
+</div>
+</div>
+<div class="section" id="updating-the-microsd-card">
+<h2>Updating the microSD card<a class="headerlink" href="#updating-the-microsd-card" title="Permalink to this headline">¶</a></h2>
+<p>To update the microSD card, download a new image file using the link above and
+flash it to the microSD card as described above. Be sure
+to <a class="reference internal" href="startrun.html#managefiles"><span class="std std-ref">back up any MicroPython programs you want to save</span></a>.</p>
+<p>You do not need to erase the contents of the microSD card first. This is done
+automatically when you flash the new image file.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="startbrick.html" class="btn btn-neutral float-right" title="Using the EV3 Brick" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Getting started with LEGO® MINDSTORMS Education EV3 MicroPython" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

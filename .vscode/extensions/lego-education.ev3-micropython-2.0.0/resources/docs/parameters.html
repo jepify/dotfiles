@@ -1,0 +1,642 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>parameters – Parameters and Constants &mdash; ev3-micropython 2.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'2.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="tools – Timing and Data logging" href="tools.html" />
+    <link rel="prev" title="iodevices – Generic I/O Devices" href="iodevices.html" />
+    <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="startinstall.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startbrick.html">Using the EV3 Brick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startrun.html">Creating and running programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startlinux.html">Accessing advanced EV3 features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startupgrade.html">Upgrading from v1.0 to v2.0</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Pybricks Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – Programmable Hubs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – Generic I/O Devices</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – Parameters and Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – Timing and Data logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – Sounds and Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – Messaging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Engineering Extras</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="signaltypes.html">Signals and Units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motors.html">More about Motors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Robot Educator Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_basic.html">Basic Movement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_ultrasonic.html">Obstacle Avoidance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_line.html">Line Following</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Core Set Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/color_sorter.html">Color Sorter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_arm.html">Robot Arm H25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/puppy.html">Puppy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/gyro_boy.html">Gyro Boy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Expansion Set Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/elephant.html">Elephant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/stair_climber.html">Stair Climber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/tank_bot.html">Tank Bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/znap.html">Znap</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ev3-micropython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – Parameters and Constants</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/parameters.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-pybricks.parameters">
+<span id="parameters-parameters-and-constants"></span><h1><a class="reference internal" href="#module-pybricks.parameters" title="pybricks.parameters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code></a> – Parameters and Constants<a class="headerlink" href="#module-pybricks.parameters" title="Permalink to this headline">¶</a></h1>
+<p>Constant parameters/arguments for the Pybricks API.</p>
+<dl class="class">
+<dt id="pybricks.parameters.Port">
+<em class="property">class </em><code class="descname">Port</code><a class="headerlink" href="#pybricks.parameters.Port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Port on the programmable brick or hub.</p>
+<blockquote>
+<div><p>Motor ports:</p>
+<blockquote>
+<div><dl class="data">
+<dt id="pybricks.parameters.Port.A">
+<code class="descname">A</code><a class="headerlink" href="#pybricks.parameters.Port.A" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Port.B">
+<code class="descname">B</code><a class="headerlink" href="#pybricks.parameters.Port.B" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Port.C">
+<code class="descname">C</code><a class="headerlink" href="#pybricks.parameters.Port.C" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Port.D">
+<code class="descname">D</code><a class="headerlink" href="#pybricks.parameters.Port.D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+<p>Sensor ports:</p>
+<blockquote>
+<div><dl class="data">
+<dt id="pybricks.parameters.Port.S1">
+<code class="descname">S1</code><a class="headerlink" href="#pybricks.parameters.Port.S1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Port.S2">
+<code class="descname">S2</code><a class="headerlink" href="#pybricks.parameters.Port.S2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Port.S3">
+<code class="descname">S3</code><a class="headerlink" href="#pybricks.parameters.Port.S3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Port.S4">
+<code class="descname">S4</code><a class="headerlink" href="#pybricks.parameters.Port.S4" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="class">
+<dt id="pybricks.parameters.Direction">
+<em class="property">class </em><code class="descname">Direction</code><a class="headerlink" href="#pybricks.parameters.Direction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational direction for positive speed or angle values.</p>
+<dl class="data">
+<dt id="pybricks.parameters.Direction.CLOCKWISE">
+<code class="descname">CLOCKWISE</code><a class="headerlink" href="#pybricks.parameters.Direction.CLOCKWISE" title="Permalink to this definition">¶</a></dt>
+<dd><p>A positive speed value should make the motor move clockwise.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Direction.COUNTERCLOCKWISE">
+<code class="descname">COUNTERCLOCKWISE</code><a class="headerlink" href="#pybricks.parameters.Direction.COUNTERCLOCKWISE" title="Permalink to this definition">¶</a></dt>
+<dd><p>A positive speed value should make the motor move counterclockwise.</p>
+</dd></dl>
+
+<table border="1" class="docutils">
+<colgroup>
+<col width="47%" />
+<col width="28%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><code class="docutils literal notranslate"><span class="pre">positive_direction</span> <span class="pre">=</span></code></th>
+<th class="head">Positive speed:</th>
+<th class="head">Negative speed:</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><code class="docutils literal notranslate"><span class="pre">Direction.CLOCKWISE</span></code></td>
+<td>clockwise</td>
+<td>counterclockwise</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal notranslate"><span class="pre">Direction.COUNTERCLOCKWISE</span></code></td>
+<td>counterclockwise</td>
+<td>clockwise</td>
+</tr>
+</tbody>
+</table>
+<p>By default, the positive direction is set as clockwise. Refer to
+<a class="reference internal" href="ev3devices.html#fig-ev3motors"><span class="std std-ref">this diagram</span></a> to see which direction this is for EV3
+motors.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pybricks.parameters.Stop">
+<em class="property">class </em><code class="descname">Stop</code><a class="headerlink" href="#pybricks.parameters.Stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Action after the motor stops: coast, brake, or hold.</p>
+<dl class="data">
+<dt id="pybricks.parameters.Stop.COAST">
+<code class="descname">COAST</code><a class="headerlink" href="#pybricks.parameters.Stop.COAST" title="Permalink to this definition">¶</a></dt>
+<dd><p>Let the motor move freely.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Stop.BRAKE">
+<code class="descname">BRAKE</code><a class="headerlink" href="#pybricks.parameters.Stop.BRAKE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Passively resist small external forces.</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Stop.HOLD">
+<code class="descname">HOLD</code><a class="headerlink" href="#pybricks.parameters.Stop.HOLD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Keep controlling the motor to hold it at the commanded angle. This is
+only available on motors with encoders.</p>
+</dd></dl>
+
+<p>The following table show how each stop type adds an extra level of
+resistance to motion. In these examples, <code class="docutils literal notranslate"><span class="pre">m</span></code> is a
+<a class="reference internal" href="ev3devices.html#pybricks.ev3devices.Motor" title="pybricks.ev3devices.Motor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Motor</span></code></a> and
+and <code class="docutils literal notranslate"><span class="pre">d</span></code> is a <a class="reference internal" href="robotics.html#pybricks.robotics.DriveBase" title="pybricks.robotics.DriveBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">DriveBase</span></code></a>. The
+examples also show how running at zero speed compares to these stop types.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="12%" />
+<col width="8%" />
+<col width="13%" />
+<col width="15%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><div class="first last line-block">
+<div class="line">Type</div>
+</div>
+</th>
+<th class="head"><div class="first last line-block">
+<div class="line">Friction</div>
+</div>
+</th>
+<th class="head"><div class="first last line-block">
+<div class="line">Back</div>
+<div class="line">EMF</div>
+</div>
+</th>
+<th class="head"><div class="first last line-block">
+<div class="line">Speed</div>
+<div class="line">kept at 0</div>
+</div>
+</th>
+<th class="head"><div class="first last line-block">
+<div class="line">Angle kept</div>
+<div class="line">at target</div>
+</div>
+</th>
+<th class="head"><div class="first last line-block">
+<div class="line">Examples</div>
+</div>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Coast</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td><div class="first last line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">m.stop()</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">m.run_target(500,</span> <span class="pre">90,</span> <span class="pre">Stop.COAST)</span></code></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Brake</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td><div class="first last line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">m.brake()</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">m.run_target(500,</span> <span class="pre">90,</span> <span class="pre">Stop.BRAKE)</span></code></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td>&#160;</td>
+<td><div class="first last line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">m.run(0)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">d.drive(0,</span> <span class="pre">0)</span></code></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Hold</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td><ul class="first last simple">
+<li></li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line"><code class="docutils literal notranslate"><span class="pre">m.hold()</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">m.run_target(500,</span> <span class="pre">90,</span> <span class="pre">Stop.HOLD)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">d.straight(0)</span></code></div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">d.straight(100)</span></code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="pybricks.parameters.Color">
+<em class="property">class </em><code class="descname">Color</code><a class="headerlink" href="#pybricks.parameters.Color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Light or surface color.</p>
+<dl class="data">
+<dt id="pybricks.parameters.Color.BLACK">
+<code class="descname">BLACK</code><a class="headerlink" href="#pybricks.parameters.Color.BLACK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Color.BLUE">
+<code class="descname">BLUE</code><a class="headerlink" href="#pybricks.parameters.Color.BLUE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Color.GREEN">
+<code class="descname">GREEN</code><a class="headerlink" href="#pybricks.parameters.Color.GREEN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Color.YELLOW">
+<code class="descname">YELLOW</code><a class="headerlink" href="#pybricks.parameters.Color.YELLOW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Color.RED">
+<code class="descname">RED</code><a class="headerlink" href="#pybricks.parameters.Color.RED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Color.WHITE">
+<code class="descname">WHITE</code><a class="headerlink" href="#pybricks.parameters.Color.WHITE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Color.BROWN">
+<code class="descname">BROWN</code><a class="headerlink" href="#pybricks.parameters.Color.BROWN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Color.ORANGE">
+<code class="descname">ORANGE</code><a class="headerlink" href="#pybricks.parameters.Color.ORANGE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Color.PURPLE">
+<code class="descname">PURPLE</code><a class="headerlink" href="#pybricks.parameters.Color.PURPLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pybricks.parameters.Button">
+<em class="property">class </em><code class="descname">Button</code><a class="headerlink" href="#pybricks.parameters.Button" title="Permalink to this definition">¶</a></dt>
+<dd><p>Buttons on a brick or remote:</p>
+<dl class="data">
+<dt id="pybricks.parameters.Button.LEFT_DOWN">
+<code class="descname">LEFT_DOWN</code><a class="headerlink" href="#pybricks.parameters.Button.LEFT_DOWN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Button.DOWN">
+<code class="descname">DOWN</code><a class="headerlink" href="#pybricks.parameters.Button.DOWN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Button.RIGHT_DOWN">
+<code class="descname">RIGHT_DOWN</code><a class="headerlink" href="#pybricks.parameters.Button.RIGHT_DOWN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Button.LEFT">
+<code class="descname">LEFT</code><a class="headerlink" href="#pybricks.parameters.Button.LEFT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Button.CENTER">
+<code class="descname">CENTER</code><a class="headerlink" href="#pybricks.parameters.Button.CENTER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Button.RIGHT">
+<code class="descname">RIGHT</code><a class="headerlink" href="#pybricks.parameters.Button.RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Button.LEFT_UP">
+<code class="descname">LEFT_UP</code><a class="headerlink" href="#pybricks.parameters.Button.LEFT_UP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Button.UP">
+<code class="descname">UP</code><a class="headerlink" href="#pybricks.parameters.Button.UP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Button.BEACON">
+<code class="descname">BEACON</code><a class="headerlink" href="#pybricks.parameters.Button.BEACON" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pybricks.parameters.Button.RIGHT_UP">
+<code class="descname">RIGHT_UP</code><a class="headerlink" href="#pybricks.parameters.Button.RIGHT_UP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="31%" />
+<col width="34%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>LEFT_UP</td>
+<td>UP/BEACON</td>
+<td>RIGHT_UP</td>
+</tr>
+<tr class="row-even"><td>LEFT</td>
+<td>CENTER</td>
+<td>RIGHT</td>
+</tr>
+<tr class="row-odd"><td>LEFT_DOWN</td>
+<td>DOWN</td>
+<td>RIGHT_DOWN</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tools.html" class="btn btn-neutral float-right" title="tools – Timing and Data logging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="iodevices.html" class="btn btn-neutral float-left" title="iodevices – Generic I/O Devices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

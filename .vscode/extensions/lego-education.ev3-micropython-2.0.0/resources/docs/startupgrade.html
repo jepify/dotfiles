@@ -1,0 +1,586 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Upgrading from v1.0 to v2.0 &mdash; ev3-micropython 2.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'2.0.0',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script type="text/javascript" src="_static/contentui.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/contentui.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="hubs – Programmable Hubs" href="hubs.html" />
+    <link rel="prev" title="Accessing advanced EV3 features" href="startlinux.html" />
+    <link rel="stylesheet" href="_static/css/theme_overrides.css" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/lego-education-logo-small.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="startinstall.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startbrick.html">Using the EV3 Brick</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startrun.html">Creating and running programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="startlinux.html">Accessing advanced EV3 features</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Upgrading from v1.0 to v2.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#upgrading-the-microsd-card">Upgrading the microSD Card</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upgrading-your-existing-programs">Upgrading your existing programs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-new-ev3brick-class-replaces-the-ev3brick-module">The new EV3Brick() class replaces the ev3brick module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-internal-changes-to-existing-features">Other internal changes to existing features</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Pybricks Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hubs.html"><code class="docutils literal notranslate"><span class="pre">hubs</span></code> – Programmable Hubs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ev3devices.html"><code class="docutils literal notranslate"><span class="pre">ev3devices</span></code> – EV3 Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nxtdevices.html"><code class="docutils literal notranslate"><span class="pre">nxtdevices</span></code> – NXT Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="iodevices.html"><code class="docutils literal notranslate"><span class="pre">iodevices</span></code> – Generic I/O Devices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html"><code class="docutils literal notranslate"><span class="pre">parameters</span></code> – Parameters and Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html"><code class="docutils literal notranslate"><span class="pre">tools</span></code> – Timing and Data logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="robotics.html"><code class="docutils literal notranslate"><span class="pre">robotics</span></code> – Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="media.html"><code class="docutils literal notranslate"><span class="pre">media</span></code> – Sounds and Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="messaging.html"><code class="docutils literal notranslate"><span class="pre">messaging</span></code> – Messaging</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Engineering Extras</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="signaltypes.html">Signals and Units</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motors.html">More about Motors</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Robot Educator Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_basic.html">Basic Movement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_ultrasonic.html">Obstacle Avoidance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_educator_line.html">Line Following</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Core Set Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/color_sorter.html">Color Sorter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/robot_arm.html">Robot Arm H25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/puppy.html">Puppy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/gyro_boy.html">Gyro Boy</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Expansion Set Programs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/elephant.html">Elephant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/stair_climber.html">Stair Climber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/tank_bot.html">Tank Bot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/znap.html">Znap</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ev3-micropython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Upgrading from v1.0 to v2.0</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/startupgrade.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="upgrading-from-v1-0-to-v2-0">
+<h1>Upgrading from v1.0 to v2.0<a class="headerlink" href="#upgrading-from-v1-0-to-v2-0" title="Permalink to this headline">¶</a></h1>
+<p><em>EV3 MicroPython version 2.0 was released on May 18, 2020.</em></p>
+<p>This section is for users who have previously used LEGO MINDSTORMS EV3
+MicroPython v1.0. We’ll explain what’s changed and how you can upgrade to
+benefit from the latest improvements.</p>
+<p>If you are a new user and you just got started using version 2.0, you may skip
+this section.</p>
+<div class="section" id="upgrading-the-microsd-card">
+<h2>Upgrading the microSD Card<a class="headerlink" href="#upgrading-the-microsd-card" title="Permalink to this headline">¶</a></h2>
+<p>To upgrade, download the latest microSD card file and install it using the
+standard <a class="reference internal" href="startinstall.html#prepsdcard"><span class="std std-ref">instructions</span></a>.</p>
+<p>Note that this will erase all your existing files on the SD Card. Before you
+upgrade, make sure that you still have all your projects on your computer.
+If not, you can upload files back to your computer using
+<a class="reference internal" href="startrun.html#managefiles"><span class="std std-ref">these instructions</span></a>.</p>
+<p>As with any software update, <em>be careful about when you update</em>. For example,
+if you developed your code using version v1.0 and you are halfway into your
+robotics competition season, you may want to stick with v1.0 for now.</p>
+</div>
+<div class="section" id="upgrading-your-existing-programs">
+<h2>Upgrading your existing programs<a class="headerlink" href="#upgrading-your-existing-programs" title="Permalink to this headline">¶</a></h2>
+<p>Most changes in v2.0 are <em>new</em> features, like support for additional sensors.
+Naturally, this will not affect your existing code.
+However, some changes were made to existing features to improve performance.</p>
+<p>All originally documented features in v1.0 will still work after you upgrade.
+This means that most programs originally made for v1.0 will work with the v2.0
+microSD card image without any changes.</p>
+<p>To try this, simply download and run your original code as you did before.</p>
+<p>However, it is recommended that you upgrade both the microSD card and your
+programs at the same time to ensure everything works as expected.</p>
+<div class="section" id="the-new-ev3brick-class-replaces-the-ev3brick-module">
+<h3>The new EV3Brick() class replaces the ev3brick module<a class="headerlink" href="#the-new-ev3brick-class-replaces-the-ev3brick-module" title="Permalink to this headline">¶</a></h3>
+<p>Version 2.0 introduces the <a class="reference internal" href="hubs.html#pybricks.hubs.EV3Brick" title="pybricks.hubs.EV3Brick"><code class="xref py py-class docutils literal notranslate"><span class="pre">EV3Brick()</span></code></a> class.
+You can use it instead of the old  <code class="docutils literal notranslate"><span class="pre">ev3brick</span></code> module. The old <code class="docutils literal notranslate"><span class="pre">ev3brick</span></code>
+module can still be used, but it is no longer recommended or documented.</p>
+<p>The <a class="reference internal" href="hubs.html#pybricks.hubs.EV3Brick" title="pybricks.hubs.EV3Brick"><code class="xref py py-class docutils literal notranslate"><span class="pre">EV3Brick()</span></code></a> class improves the speed and
+reliability of the EV3 screen and the EV3 speaker. It also adds functionality
+like speech and drawing shapes. The default
+font size is also bigger to make it easier to read text on the screen.</p>
+<p>You can use
+the following table as a starting point to upgrade your scripts. See the
+<a class="reference internal" href="hubs.html#pybricks.hubs.EV3Brick" title="pybricks.hubs.EV3Brick"><code class="xref py py-class docutils literal notranslate"><span class="pre">EV3Brick()</span></code></a> class documentation for
+complete details of all methods and arguments.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Action</strong></td>
+<td><strong>v1.0</strong></td>
+<td><strong>v2.0</strong></td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Initialize</div>
+<div class="line">your EV3</div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pybricks</span> <span class="kn">import</span> <span class="n">ev3brick</span> <span class="k">as</span> <span class="n">brick</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pybricks.hubs</span> <span class="kn">import</span> <span class="n">EV3Brick</span>
+
+<span class="n">ev3</span> <span class="o">=</span> <span class="n">EV3Brick</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">Light on</div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">light</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="n">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Light off</div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">light</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">light</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">Read</div>
+<div class="line">Buttons</div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Button</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">in</span> <span class="n">brick</span><span class="o">.</span><span class="n">buttons</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Left is pressed.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">Button</span><span class="o">.</span><span class="n">LEFT</span> <span class="ow">in</span> <span class="n">ev3</span><span class="o">.</span><span class="n">buttons</span><span class="o">.</span><span class="n">pressed</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Left is pressed.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Play a</div>
+<div class="line">beep</div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">sound</span><span class="o">.</span><span class="n">beep</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">beep</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">Play a</div>
+<div class="line">sound file</div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">sound</span><span class="o">.</span><span class="n">file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">HELLO</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_file</span><span class="p">(</span><span class="n">SoundFile</span><span class="o">.</span><span class="n">HELLO</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Text to</div>
+<div class="line">speech</div>
+</div>
+</td>
+<td>&#160;</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="s2">&quot;I can say anything!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">Play</div>
+<div class="line">notes</div>
+</div>
+</td>
+<td>&#160;</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">play_notes</span><span class="p">([</span><span class="s1">&#39;C4/4&#39;</span><span class="p">,</span> <span class="s1">&#39;G4/4&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Write text</div>
+<div class="line">at a given</div>
+<div class="line">position</div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">))</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">draw_text</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="s2">&quot;Hello!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">Write text</div>
+<div class="line">and scroll</div>
+<div class="line">automatically</div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+<span class="n">brick</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&quot;world!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
+<span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s2">&quot;world!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Change font</div>
+<div class="line">size</div>
+</div>
+</td>
+<td>&#160;</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pybricks.media.ev3dev</span> <span class="kn">import</span> <span class="n">Font</span>
+
+<span class="n">big_font</span> <span class="o">=</span> <span class="n">Font</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="n">big_font</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">Display an</div>
+<div class="line">image on</div>
+<div class="line">the screen</div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pybricks.parameters</span> <span class="kn">import</span> <span class="n">ImageFile</span>
+
+<span class="n">brick</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="n">ImageFile</span><span class="o">.</span><span class="n">QUESTION_MARK</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pybricks.media.ev3dev</span> <span class="kn">import</span> <span class="n">ImageFile</span>
+
+<span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">load_image</span><span class="p">(</span><span class="n">ImageFile</span><span class="o">.</span><span class="n">Question_MARK</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Draw shapes</div>
+<div class="line">on the screen</div>
+</div>
+</td>
+<td>&#160;</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">draw_line</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">draw_box</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">ev3</span><span class="o">.</span><span class="n">screen</span><span class="o">.</span><span class="n">draw_circle</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">Read</div>
+<div class="line">battery</div>
+<div class="line">voltage</div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brick</span><span class="o">.</span><span class="n">battery</span><span class="o">.</span><span class="n">voltage</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+<td><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ev3</span><span class="o">.</span><span class="n">battery</span><span class="o">.</span><span class="n">voltage</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="other-internal-changes-to-existing-features">
+<h3>Other internal changes to existing features<a class="headerlink" href="#other-internal-changes-to-existing-features" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Most methods of the <a class="reference internal" href="ev3devices.html#pybricks.ev3devices.Motor" title="pybricks.ev3devices.Motor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Motor()</span></code></a> class now
+have <code class="docutils literal notranslate"><span class="pre">Stop.HOLD</span></code> as the default instead of <code class="docutils literal notranslate"><span class="pre">Stop.COAST</span></code>. This improves
+accuracy in most applications. You can still select <code class="docutils literal notranslate"><span class="pre">Stop.COAST</span></code> if you
+like.</p>
+</li>
+<li><p class="first">The internal PID controllers for the motors are more accurate than before.
+If you give a motor command when it is already running, it smoothly adjusts
+the speed to the newly given command. This works even if you keep
+adjusting the speed in a fast loop.</p>
+</li>
+<li><p class="first">Methods to configure motor settings have changed. You can change settings
+using the <a class="reference internal" href="motors.html"><span class="doc">control</span></a> attribute now. The old settings setters
+continue to exist in the implementation, but they are no longer documented.</p>
+</li>
+<li><p class="first">So-called Python <em>keyword arguments</em> are now supported. Previously, you
+could only enter the argument <em>values</em>. For example:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_motor</span><span class="o">.</span><span class="n">run_angle</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="n">Stop</span><span class="o">.</span><span class="n">HOLD</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>This is still possible. But you can now choose to omit optional arguments
+and specify others with <em>keywords</em>. This can make your code easier to read.
+For example:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_motor</span><span class="o">.</span><span class="n">run_angle</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="n">wait</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">It is no longer necessary to import <code class="docutils literal notranslate"><span class="pre">pybricks.tools.print</span></code>. The <code class="docutils literal notranslate"><span class="pre">print</span></code>
+function is now built-in. It works just like Python or MicroPython.</p>
+</li>
+<li><p class="first">Most parameters in the <a class="reference internal" href="parameters.html#module-pybricks.parameters" title="pybricks.parameters"><code class="xref py py-mod docutils literal notranslate"><span class="pre">parameters</span></code></a> now have a
+specific type and representation. For example, suppose you measure a color
+and print the result. If you do <code class="docutils literal notranslate"><span class="pre">print(Color.RED)</span></code>, you will see the
+parameter instead of a technical number.</p>
+</li>
+<li><p class="first">Sound and image files have moved to a dedicated <a class="reference internal" href="media.html"><span class="doc">media</span></a> module.
+Importing them from the old location will continue to work in this release,
+to make sure existing scripts will still work.</p>
+</li>
+</ul>
+<p><strong>Installing an older version of the Visual Studio Code extension</strong></p>
+<p>The Visual Studio Code extension and this documentation are updated
+automatically. You can still use your existing scripts with the updated
+extension. If you absolutely wish to keep the old version, look for the EV3
+extension on the extension tab, click the gear icon, and
+click <em>install another version</em>.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hubs.html" class="btn btn-neutral float-right" title="hubs – Programmable Hubs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="startlinux.html" class="btn btn-neutral float-left" title="Accessing advanced EV3 features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019-2020 The LEGO Group. All rights reserved.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+<div class="disclaimer">LEGO, the LEGO logo, MINDSTORMS and the MINDSTORMS EV3 logo are               trademarks and/or copyrights of the LEGO Group.</div>
+
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
