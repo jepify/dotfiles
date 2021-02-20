@@ -8,9 +8,8 @@ alias np='nano -w PKGBUILD'
 alias more=less
 alias ls="ls -hN --color=auto --group-directories-first"
 alias la="ls -A -hN --color=auto --group-directories-first"
-alias grep='grep --colour=auto'
-alias egrep='egrep --colour=auto'
-alias fgrep='fgrep --colour=auto'
+alias ll="ls -l"
+alias grep='rg'
 
 #set -o vi
 
@@ -38,16 +37,20 @@ za() {
     zathura "$1" &>/dev/null &
 }
 
-alias radionord="mplayer -afm ffmpeg http://netradio.radionord.dk:8000/RadioNord"
+alias radionord="mplayer -cache 1024 -cache-min 8 -bandwidth 1000000  -afm ffmpeg http://netradio.radionord.dk:8000/RadioNord"
 
 #books
 alias lpb="za ~/au/books/linearprogramming.pdf"    
 alias dno="za ~/au/books/dno.pdf"
 alias dlb="za ~/au/books/deeplearningbook.pdf"
 alias wot="za ~/au/books/webofthings.pdf"
-alias cpt="za ~/au/books/cryptography.pdf"
+alias cry="za ~/au/books/cryptography.pdf"
+alias mpc="za ~/au/books/smpcss.pdf"
+alias arpp="za ~/au/books/arpp.pdf"
+alias icg="za ~/au/books/icc.pdf"
 
 alias rptimm="ssh jep@192.168.43.44"
+alias rpcasp="ssh jep@172.20.10.13"
 
 
 
