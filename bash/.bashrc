@@ -6,15 +6,13 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
-alias ls="ls -hN --color=auto --group-directories-first"
-alias la="ls -a -hN --color=auto --group-directories-first"
+alias ls="ls -G"
+alias la="ls -a -G"
+alias ll="ls -l -a -G"
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
-xhost +local:root > /dev/null 2>&1
 
-set -o vi
-PS1=" ┌錄 \[\e[32m\]\u\[\e[m\]\[\e[32m\]@\[\e[m\]\[\e[32m\]\h\[\e[m\] \w \\$ \n "
 complete -cf sudo
 shopt -s checkwinsize
 
@@ -28,7 +26,11 @@ shopt -s histappend
 # zsh-like tab-completion
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\[$(tput setaf 2)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 2)\]\h \[$(tput setaf 5)\]\W \[\e[91m\]\$(parse_git_branch)\[\e[00m\]\[$(tput setaf 2)\]]\[$(tput setaf 5)\]\\$ \[$(tput sgr0)\]"
 
 
-export PS1="\[$(tput bold)\]\[$(tput setaf 2)\][\[$(tput setaf 2)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 2)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 2)\]]\[$(tput setaf 5)\]\\$ \[$(tput sgr0)\]"
-
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

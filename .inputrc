@@ -1,5 +1,2 @@
 $include /etc/inputrc
 set completion-ignore-case On
-set show-mode-in-prompt on
-set vi-ins-mode-string \1\e[2 q\2\e]12;magenta\a
-set vi-cmd-mode-string \1\e[4 q\2\e]12;yellow\a

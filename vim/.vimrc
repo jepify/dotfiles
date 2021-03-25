@@ -1,4 +1,4 @@
-"## General
+"# General
 set number  " Show line numbers
 set linebreak   " Break lines at word (requires Wrap lines)
 set showbreak=+++   " Wrap-broken line prefix
@@ -38,9 +38,6 @@ Plug 'junegunn/vim-easy-align'
 " Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
-" Multiple Plug commands can be written in a single line using | separators
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
@@ -60,30 +57,29 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Unmanaged plugin (manually installed and updated)
 Plug '~/my-prototype-plugin'
 
-Plug 'doums/darcula'
-Plug 'flrnprz/candid.vim'
-Plug 'flrnprz/plastic.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
-
-" Initialize plugin system
+Plug 'itchyny/landscape.vim'
 call plug#end()
 
+if !has('gui_running')
+    set t_Co=256
+endif
+
 set background=dark
+color landscape
 syntax on
-"colorscheme darcula
-"colorscheme candid
-colorscheme plastic
 " Lightline
- let g:lightline = { 
-    \ 'active': {
-    \	'left': [['mode', 'paste'],
-    \	    ['gitbranch', 'readonly', 'filename', 'modified']]
-    \ },
-    \ 'component_function': {
-    \   'gitbranch': 'gitbranch#name'
-    \ }
-    \ }
+let g:lightline = { 
+   \ 'active': {
+   \	'left': [['mode', 'paste'],
+   \	    ['gitbranch', 'readonly', 'filename', 'modified']]
+   \ },
+   \ 'component_function': {
+   \   'gitbranch': 'gitbranch#name'
+   \ },
+   \ 'colorscheme': 'landscape'
+   \ }
 
 
 "R markdown
