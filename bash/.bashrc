@@ -8,8 +8,8 @@ alias np='nano -w PKGBUILD'
 alias more=less
 alias ls="ls -hN --color=auto --group-directories-first"
 alias la="ls -A -hN --color=auto --group-directories-first"
-alias ll="ls -l"
-alias grep='rg'
+alias ll="ls -l -a"
+alias grep='rg --color=auto'
 
 #set -o vi
 
@@ -40,14 +40,14 @@ za() {
 alias radionord="mplayer -cache 1024 -cache-min 8 -bandwidth 1000000  -afm ffmpeg http://netradio.radionord.dk:8000/RadioNord"
 
 #books
-alias lpb="za ~/au/books/linearprogramming.pdf"    
-alias dno="za ~/au/books/dno.pdf"
-alias dlb="za ~/au/books/deeplearningbook.pdf"
-alias wot="za ~/au/books/webofthings.pdf"
-alias cry="za ~/au/books/cryptography.pdf"
-alias mpc="za ~/au/books/smpcss.pdf"
-alias arpp="za ~/au/books/arpp.pdf"
-alias icg="za ~/au/books/icc.pdf"
+alias lpb="za ~/au/aubooks/linearprogramming.pdf"    
+alias dno="za ~/au/aubooks/dno.pdf"
+alias dlb="za ~/au/aubooks/deeplearningbook.pdf"
+alias wot="za ~/au/aubooks/webofthings.pdf"
+alias cry="za ~/au/aubooks/cryptography.pdf"
+alias mpc="za ~/au/aubooks/smpcss.pdf"
+alias arpp="za ~/au/aubooks/arpp.pdf"
+alias icg="za ~/au/aubooks/icc.pdf"
 
 alias rptimm="ssh jep@192.168.43.44"
 alias rpcasp="ssh jep@172.20.10.13"
