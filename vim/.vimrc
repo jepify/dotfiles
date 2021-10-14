@@ -110,3 +110,4 @@ vnoremap <Up> <Nop>
 
 nnoremap j gj
 nnoremap k gk
+inoremap <S-Tab> <C-d>
